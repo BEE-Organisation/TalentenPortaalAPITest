@@ -1,0 +1,7 @@
+ALTER TABLE [CV].[CVItem] 
+ADD FoundJob bit NOT NULL
+CONSTRAINT MustHaveValue DEFAULT 0
+WITH VALUES
+
+ALTER TABLE [CV].[CVItem] 
+ADD WorksAtCompany nvarchar NULL

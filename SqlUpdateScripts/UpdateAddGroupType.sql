@@ -1,0 +1,3 @@
+ALTER TABLE CV.CapacityBuildingGroup
+ADD GroupType INT NOT NULL DEFAULT(1)
+GO
