@@ -9,7 +9,20 @@ namespace TalentLogic.Logic.BusinessObjects
     public class BOTalentRefactored
     {
         public int? Id { get; set; }
+        public string Initials { get; set; } = string.Empty;
+        public string GivenName { get; set; } = string.Empty;
+        public string NamePrefix { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
+        public string EmailAddress { get; set; } = string.Empty;
+        public string StreetName { get; set; } = string.Empty;
+        public string HouseNumber { get; set; } = string.Empty;
+        public string HouseNumberSuffix { get; set; } = string.Empty;
+        public string PostalCode { get; set; } = string.Empty;
+        public string Municipality { get; set; } = string.Empty;
+        public string Province { get; set; } = string.Empty;
+        public string countryCode { get; set; } = string.Empty;
         public int? OrganisationId { get; set; }
         public BOOrganization? Organization { get; set; }
         public string JobTitle { get; set; } = string.Empty;
@@ -17,8 +30,6 @@ namespace TalentLogic.Logic.BusinessObjects
         //public string CharacterTraits { get; set; } = string.Empty;
         public string DateOfBirth { get; set; }
         public string Education { get; set; } = string.Empty;
-        public string Municipality { get; set; } = string.Empty;
-        public string Province { get; set; } = string.Empty;
         public string ProfilePhotoRef { get; set; } = string.Empty;
         public string? PitchUrl { get; set; } = string.Empty;
         public string? LoopUrl { get; set; } = string.Empty;

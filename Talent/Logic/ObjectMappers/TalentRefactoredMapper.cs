@@ -13,11 +13,27 @@ namespace TalentLogic.Logic.ObjectMappers
 
         public static BOTalentRefactored Map(Talent model)
         {
-            BOTalentRefactored bo = new BOTalentRefactored();
-            bo.Id = model.Id;
-            bo.Name = model.Name;
+            // TODO: Add properties to Talent when they are added to DataAccessObjects
 
-            if(model.OrganisationId != null)
+            BOTalentRefactored bo = new BOTalentRefactored();
+
+            bo.Id = model.Id;
+            bo.Initials = "P.J."; // model.Initials;
+            bo.GivenName = "Peter"; // model.GivenName; 
+            bo.NamePrefix = "de"; // model.NamePrefix;
+            bo.LastName = "Waal"; // model.LastName; 
+            bo.Name = model.Name;
+            bo.PhoneNumber = "06 12345678"; // model.PhoneNumber;
+            bo.EmailAddress = "pdwaal@gmail.com"; // model.EmailAddress; 
+            bo.StreetName = "Hoofdstraat"; // model.StreetName; 
+            bo.HouseNumber = "7"; // model.HouseNumber; 
+            bo.HouseNumberSuffix = "A"; // model.HouseNumberSuffix; 
+            bo.PostalCode = "1234 AB"; // model.PostalCode; 
+            bo.Municipality = model.Municipality;   
+            bo.Province = model.Province;
+            bo.countryCode = "NL"; // model.countryCode; 
+
+            if (model.OrganisationId != null)
             {
                 bo.OrganisationId = model.OrganisationId;
             }
@@ -32,8 +48,6 @@ namespace TalentLogic.Logic.ObjectMappers
             //bo.CharacterTraits = model.CharacterTraits;
             bo.DateOfBirth = model.DateOfBirth.ToString();
             bo.Education = model.Education;
-            bo.Municipality = model.Municipality;
-            bo.Province = model.Province;
             bo.ProfilePhotoRef = model.ProfilePhotoRef;
             bo.LinkedInUrl = model.LinkedInUrl;
             bo.ContactOptions = model.ContactOptions;
@@ -71,7 +85,25 @@ namespace TalentLogic.Logic.ObjectMappers
 
             model.Name = bo.Name;
 
-            if(bo.OrganisationId != null)
+            // TODO: Add properties to Talent when they are added to DataAccessObjects
+
+            //model.Id = bo.Id;
+            //model.Initials = bo.Initials;
+            //model.GivenName = bo.GivenName; 
+            //model.NamePrefix = bo.NamePrefix;
+            //model.LastName = bo.LastName; 
+            //model.Name = bo.Name;
+            //model.PhoneNumber = bo.PhoneNumber;
+            //model.EmailAddress = bo.EmailAddress; 
+            //model.StreetName = bo.StreetName; 
+            //model.HouseNumber = bo.HouseNumber; 
+            //model.HouseNumberSuffix = bo.HouseNumberSuffix; 
+            //model.PostalCode = bo.PostalCode; 
+            //model.Municipality = bo.Municipality;
+            //model.Province = bo.Province;
+            //model.countryCode = bo.countryCode; 
+
+            if (bo.OrganisationId != null)
             {
                 model.OrganisationId = (bo.OrganisationId > 0) ? bo.OrganisationId : null;
             }
