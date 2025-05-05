@@ -12,8 +12,8 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         public int Id { get; set; }
 
         #region Personal Information
-        //[Required]
-        //public string Name { get; set; } = string.Empty;
+        [Required]
+        public string Name { get; set; } = string.Empty; // TODO: remove when possible, used in CreateTalentNewData 
         [Required]
         public string GivenName { get; set; } = string.Empty;
         [Required]
