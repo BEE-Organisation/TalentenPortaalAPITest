@@ -11,15 +11,18 @@ namespace TalentLogic.Logic.BusinessObjects
         public int? Id { get; set; }
 
         #region Personal Information
+
         public string Name { get; set; } = string.Empty; // TODO: to be removed
         public string Initials { get; set; } = string.Empty; // TODO: use when field is created
         public string GivenName { get; set; } = string.Empty;
         public string Surname { get; set; } = string.Empty;
         public string NamePrefix { get; set; } = string.Empty;
         public string DateOfBirth { get; set; }
+
         #endregion
 
         #region Adress
+
         public string Municipality { get; set; } = string.Empty;
         public string Province { get; set; } = string.Empty;
         public string Street { get; set; } = string.Empty;
@@ -31,17 +34,21 @@ namespace TalentLogic.Logic.BusinessObjects
         #endregion
 
         #region Contact
+
         public string Email { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
         public string? LinkedInUrl { get; set; } = string.Empty;
         public string? ContactOptions { get; set; } = string.Empty;
+
         #endregion
 
         #region Media
+
         public string ProfilePhotoRef { get; set; } = string.Empty;
         public string? PitchUrl { get; set; } = string.Empty;
         public string? LoopUrl { get; set; } = string.Empty;
         public string? CvUrl { get; set; } = string.Empty;
+
         #endregion
 
         public int? OrganisationId { get; set; }

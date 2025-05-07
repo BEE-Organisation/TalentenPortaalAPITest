@@ -13,8 +13,6 @@ namespace TalentLogic.Logic.ObjectMappers
 
         public static BOTalentRefactored Map(Talent model)
         {
-            // TODO: Add properties to Talent when they are added to DataAccessObjects
-
             BOTalentRefactored bo = new BOTalentRefactored();
 
             bo.Id = model.Id;
@@ -98,25 +96,50 @@ namespace TalentLogic.Logic.ObjectMappers
                 model.Id = bo.Id ?? 0;
             }
 
+            #region Personal Information
+
             model.Name = bo.Name;
+            //model.Initials = bo.Initials; // TODO: use when field is created
+            model.GivenName = bo.GivenName;
+            model.Surname = bo.Surname;
+            model.NamePrefix = bo.NamePrefix;
+            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
 
-            // TODO: Add properties to Talent when they are added to DataAccessObjects
+            #endregion
 
-            //model.Id = bo.Id;
-            //model.Initials = bo.Initials;
-            //model.GivenName = bo.GivenName; 
-            //model.NamePrefix = bo.NamePrefix;
-            //model.LastName = bo.LastName; 
-            //model.Name = bo.Name;
-            //model.PhoneNumber = bo.PhoneNumber;
-            //model.EmailAddress = bo.EmailAddress; 
-            //model.StreetName = bo.StreetName; 
-            //model.HouseNumber = bo.HouseNumber; 
-            //model.HouseNumberSuffix = bo.HouseNumberSuffix; 
-            //model.PostalCode = bo.PostalCode; 
-            //model.Municipality = bo.Municipality;
-            //model.Province = bo.Province;
-            //model.countryCode = bo.countryCode; 
+            #region Adress
+
+            model.Municipality = bo.Municipality;
+            model.Province = bo.Province;
+            model.Street = bo.Street;
+            model.HouseNumber = bo.HouseNumber;
+            model.HouseNumberSuffix = bo.HouseNumberSuffix;
+            model.PostalCode = bo.PostalCode;
+            model.CountryCode = bo.countryCode;
+
+            #endregion
+
+            #region Contact
+
+            model.Email = bo.Email;
+            model.PhoneNumber = bo.PhoneNumber;
+            model.LinkedInUrl = bo.LinkedInUrl;
+            model.ContactOptions = bo.ContactOptions;
+
+            #endregion
+
+            #region Media
+
+            model.ProfilePhotoRef = bo.ProfilePhotoRef;
+            model.PitchUrl = bo.PitchUrl;
+            model.LoopUrl = bo.LoopUrl;
+
+            if (!bo.CvUrl.Equals(""))
+            {
+                model.CvUrl = bo.CvUrl;
+            }
+
+            #endregion
 
             if (bo.OrganisationId != null)
             {
@@ -134,27 +157,14 @@ namespace TalentLogic.Logic.ObjectMappers
 
             model.JobTitle = bo.JobTitle;
             model.Description = bo.Description;
-            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
+
             model.Education = bo.Education;
-            model.Municipality = bo.Municipality;
-            model.Province = bo.Province;
-            model.ProfilePhotoRef = bo.ProfilePhotoRef;
-            model.PitchUrl = bo.PitchUrl;
-            model.LoopUrl = bo.LoopUrl;
-
-            if(!bo.CvUrl.Equals(""))
-            {
-                model.CvUrl = bo.CvUrl;
-            }
-
-            model.LinkedInUrl = bo.LinkedInUrl;
-            model.ContactOptions = bo.ContactOptions;
             model.TravelDistance = bo.TravelDistance;
             model.DesiredWorkLocation = bo.DesiredWorkLocation;
             model.AvailableHours = bo.AvailableHours;
-            model.IsProfileVisible = bo.IsProfileVisible;
             model.FoundJob = bo.FoundJob;
             model.WorksAtCompany = bo.WorksAtCompany;
+            model.IsProfileVisible = bo.IsProfileVisible;    
 
             return model;
         }
