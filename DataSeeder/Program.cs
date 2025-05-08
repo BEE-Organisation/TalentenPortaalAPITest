@@ -12,12 +12,17 @@ namespace DataSeeder
         private static async Task Main(string[] args)
         {
 #if DEBUG
+            var DatabaseConnectionString =
+                "Host=162.55.181.242;Port=5433;Password=dab2b61743ca034eae37;Persist Security Info=True;Username=postgres;Database=testSimonPortal";
+
             //var DatabaseConnectionString = "Host=localhost,5432;Password=Testen2024!;Persist Security Info=True;Username=danny;Database=postgres";
-            var DatabaseConnectionString = "Host=localhost;Port=5433;Database=TalentenPortaal;Username=postgres;Password=Testen2025!;Persist Security Info=True;";
+            //var DatabaseConnectionString = "Host=localhost;Port=5433;Database=TalentenPortaal;Username=postgres;Password=Testen2025!;Persist Security Info=True;";
 #else
             var DatabaseConnectionString =
                 "Host=162.55.181.242;Port=5433;Password=dab2b61743ca034eae37;Persist Security Info=True;Username=postgres;Database=it-talenten-portaal-test";
 #endif
+
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
             var serviceCollection = new ServiceCollection();
 

@@ -202,10 +202,12 @@ namespace TalentDataAccess.DataAccess.Repositories
             if (filters.TravelDistance > 0)
             {
                 //query = query.Where(x => filters.TravelDistance > filters.TravelDistance);
-                query = query.Where(x => x.TravelDistance <= filters.TravelDistance);
+                //query = query.Where(x => x.TravelDistance <= filters.TravelDistance);
+                query = query.Where(x => x.TravelDistance >= filters.TravelDistance);
+
             }
 
-            if(activeProfiles.Count() > 0 && filterCategoriesByTalentId.Count() > 0)
+            if (activeProfiles.Count() > 0 && filterCategoriesByTalentId.Count() > 0)
             {
                 query = query.Where(x => activeProfiles.Contains(x.Id) && filterCategoriesByTalentId.Contains(x.Id));
             }
