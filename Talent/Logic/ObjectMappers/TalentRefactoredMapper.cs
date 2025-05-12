@@ -14,48 +14,75 @@ namespace TalentLogic.Logic.ObjectMappers
         public static BOTalentRefactored Map(Talent model)
         {
             BOTalentRefactored bo = new BOTalentRefactored();
+
             bo.Id = model.Id;
+
+            #region Personal Information
+
             bo.Name = model.Name;
-
-            if(model.OrganisationId != null)
-            {
-                bo.OrganisationId = model.OrganisationId;
-            }
-
-            if(model.Organization != null)
-            {
-                bo.Organization = OrganizationMapper.Map(model.Organization);
-            }
-            
-            bo.JobTitle = model.JobTitle;
-            bo.Description  = model.Description;
-            //bo.CharacterTraits = model.CharacterTraits;
+            bo.Initials = ""; // model.Initials; // TODO: use when field is created
+            bo.GivenName = model.GivenName; 
+            bo.Surname = model.Surname; 
+            bo.NamePrefix = model.NamePrefix;
             bo.DateOfBirth = model.DateOfBirth.ToString();
-            bo.Education = model.Education;
+
+            #endregion
+
+            #region Adress
+
             bo.Municipality = model.Municipality;
             bo.Province = model.Province;
-            bo.ProfilePhotoRef = model.ProfilePhotoRef;
+            bo.Street = model.Street; 
+            bo.HouseNumber = model.HouseNumber; 
+            bo.HouseNumberSuffix = model.HouseNumberSuffix; 
+            bo.PostalCode = model.PostalCode; 
+            bo.countryCode = model.CountryCode; 
+
+            #endregion
+
+            #region Contact
+            
+            bo.Email = model.Email; 
+            bo.PhoneNumber = model.PhoneNumber;
             bo.LinkedInUrl = model.LinkedInUrl;
             bo.ContactOptions = model.ContactOptions;
 
-            if(!model.PitchUrl.Equals("") && !model.PitchUrl.Equals("null"))
+            #endregion
+
+            #region Media
+
+            bo.ProfilePhotoRef = model.ProfilePhotoRef;
+            if (!model.PitchUrl.Equals("") && !model.PitchUrl.Equals("null"))
             {
                 bo.PitchUrl = model.PitchUrl;
             }
-
             if (!model.LoopUrl.Equals("") && !model.LoopUrl.Equals("null"))
             {
                 bo.LoopUrl = model.LoopUrl;
             }
-
             bo.CvUrl = model.CvUrl;
 
+            #endregion
+
+            if (model.OrganisationId != null)
+            {
+                bo.OrganisationId = model.OrganisationId;
+            }
+            if (model.Organization != null)
+            {
+                bo.Organization = OrganizationMapper.Map(model.Organization);
+            }
+
+            bo.JobTitle = model.JobTitle;
+            bo.Description  = model.Description;
+            //bo.CharacterTraits = model.CharacterTraits;
+            bo.Education = model.Education;
             bo.TravelDistance = model.TravelDistance;
             bo.DesiredWorkLocation = model.DesiredWorkLocation;
-            bo.AvailableHours = model.AvailableHours;
-            bo.IsProfileVisible = model.IsProfileVisible;
+            bo.AvailableHours = model.AvailableHours;            
             bo.FoundJob = model.FoundJob;
             bo.WorksAtCompany = model.WorksAtCompany;
+            bo.IsProfileVisible = model.IsProfileVisible;
 
             return bo;
         }
@@ -69,9 +96,52 @@ namespace TalentLogic.Logic.ObjectMappers
                 model.Id = bo.Id ?? 0;
             }
 
-            model.Name = bo.Name;
+            #region Personal Information
 
-            if(bo.OrganisationId != null)
+            model.Name = bo.Name;
+            //model.Initials = bo.Initials; // TODO: use when field is created
+            model.GivenName = bo.GivenName;
+            model.Surname = bo.Surname;
+            model.NamePrefix = bo.NamePrefix;
+            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
+
+            #endregion
+
+            #region Adress
+
+            model.Municipality = bo.Municipality;
+            model.Province = bo.Province;
+            model.Street = bo.Street;
+            model.HouseNumber = bo.HouseNumber;
+            model.HouseNumberSuffix = bo.HouseNumberSuffix;
+            model.PostalCode = bo.PostalCode;
+            model.CountryCode = bo.countryCode;
+
+            #endregion
+
+            #region Contact
+
+            model.Email = bo.Email;
+            model.PhoneNumber = bo.PhoneNumber;
+            model.LinkedInUrl = bo.LinkedInUrl;
+            model.ContactOptions = bo.ContactOptions;
+
+            #endregion
+
+            #region Media
+
+            model.ProfilePhotoRef = bo.ProfilePhotoRef;
+            model.PitchUrl = bo.PitchUrl;
+            model.LoopUrl = bo.LoopUrl;
+
+            if (!bo.CvUrl.Equals(""))
+            {
+                model.CvUrl = bo.CvUrl;
+            }
+
+            #endregion
+
+            if (bo.OrganisationId != null)
             {
                 model.OrganisationId = (bo.OrganisationId > 0) ? bo.OrganisationId : null;
             }
@@ -87,27 +157,14 @@ namespace TalentLogic.Logic.ObjectMappers
 
             model.JobTitle = bo.JobTitle;
             model.Description = bo.Description;
-            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
+
             model.Education = bo.Education;
-            model.Municipality = bo.Municipality;
-            model.Province = bo.Province;
-            model.ProfilePhotoRef = bo.ProfilePhotoRef;
-            model.PitchUrl = bo.PitchUrl;
-            model.LoopUrl = bo.LoopUrl;
-
-            if(!bo.CvUrl.Equals(""))
-            {
-                model.CvUrl = bo.CvUrl;
-            }
-
-            model.LinkedInUrl = bo.LinkedInUrl;
-            model.ContactOptions = bo.ContactOptions;
             model.TravelDistance = bo.TravelDistance;
             model.DesiredWorkLocation = bo.DesiredWorkLocation;
             model.AvailableHours = bo.AvailableHours;
-            model.IsProfileVisible = bo.IsProfileVisible;
             model.FoundJob = bo.FoundJob;
             model.WorksAtCompany = bo.WorksAtCompany;
+            model.IsProfileVisible = bo.IsProfileVisible;    
 
             return model;
         }
