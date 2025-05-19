@@ -20,7 +20,7 @@ namespace TalentLogic.Logic.ObjectMappers
             #region Personal Information
 
             bo.Name = model.Name;
-            bo.Initials = ""; // model.Initials; // TODO: use when field is created
+            bo.Initials = model.Initials; 
             bo.GivenName = model.GivenName; 
             bo.Surname = model.Surname; 
             bo.NamePrefix = model.NamePrefix;
@@ -99,7 +99,7 @@ namespace TalentLogic.Logic.ObjectMappers
             #region Personal Information
 
             model.Name = bo.Name;
-            //model.Initials = bo.Initials; // TODO: use when field is created
+            model.Initials = bo.Initials; // TODO: use when field is created
             model.GivenName = bo.GivenName;
             model.Surname = bo.Surname;
             model.NamePrefix = bo.NamePrefix;
