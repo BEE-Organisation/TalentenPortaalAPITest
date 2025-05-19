@@ -13,8 +13,8 @@ using TalentDataAccess.DataAccess;
 namespace TalentDataAccess.Migrations
 {
     [DbContext(typeof(TalentDbContext))]
-    [Migration("20250519083758_Initialsupdate")]
-    partial class Initialsupdate
+    [Migration("20250519081414_initialsupdate")]
+    partial class initialsupdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -594,245 +594,245 @@ namespace TalentDataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Glas-in-lood maken",
+                            Name = "Video’s bewerken (TikTokken!)",
                             Order = 0,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Doe-het-zelven",
+                            Name = "Papier-maché",
                             Order = 1,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Name = "3D-printen",
+                            Name = "Lezen",
                             Order = 2,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Apps ontwikkelen",
+                            Name = "Photoshoppen",
                             Order = 3,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Puzzelen",
+                            Name = "Hiken",
                             Order = 4,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Kaarten maken",
+                            Name = "Programmeren",
                             Order = 0,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 7,
-                            Name = "Hardlopen",
+                            Name = "Kaarten maken",
                             Order = 1,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 8,
-                            Name = "Skateboarden",
+                            Name = "Auto’s restaureren",
                             Order = 2,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 9,
-                            Name = "Podcast maken",
+                            Name = "Schilderen",
                             Order = 3,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 10,
-                            Name = "Yoga",
+                            Name = "Tuinieren",
                             Order = 4,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Schilderen",
+                            Name = "Zeefdrukken maken",
                             Order = 0,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 12,
-                            Name = "Muziek luisteren",
+                            Name = "Fotografie",
                             Order = 1,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 13,
-                            Name = "Podcast maken",
+                            Name = "Sleutelen aan fietsen",
                             Order = 2,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 14,
-                            Name = "Lezen",
+                            Name = "Dansen",
                             Order = 3,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 15,
-                            Name = "Robots bouwen",
+                            Name = "Kaarsen maken",
                             Order = 4,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 16,
-                            Name = "Een radiozender beginnen",
+                            Name = "Bootcamp",
                             Order = 0,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 17,
-                            Name = "Modelbouw",
+                            Name = "Apps ontwikkelen",
                             Order = 1,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 18,
-                            Name = "Drones bouwen/besturen",
+                            Name = "Kaarten maken",
                             Order = 2,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 19,
-                            Name = "Breien of haken",
+                            Name = "Domotica",
                             Order = 3,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 20,
-                            Name = "Wandelen",
+                            Name = "Je eigen bier brouwen",
                             Order = 4,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 21,
-                            Name = "Tekenen",
+                            Name = "Plantjes kweken",
                             Order = 0,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 22,
-                            Name = "Surfen",
+                            Name = "Origami",
                             Order = 1,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 23,
-                            Name = "Kleding maken",
+                            Name = "Een podcast maken",
                             Order = 2,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 24,
-                            Name = "Wandelen",
+                            Name = "Apps ontwikkelen",
                             Order = 3,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 25,
-                            Name = "Lezen",
+                            Name = "Films kijken",
                             Order = 4,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 26,
-                            Name = "Pilates",
+                            Name = "Naar de film gaan",
                             Order = 0,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 27,
-                            Name = "Sterrenkijken",
+                            Name = "Websites bouwen",
                             Order = 1,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 28,
-                            Name = "Auto’s restaureren",
+                            Name = "Podcast maken",
                             Order = 2,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 29,
-                            Name = "Sieraden maken",
+                            Name = "Gamen",
                             Order = 3,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 30,
-                            Name = "Keramiek",
+                            Name = "Acteren",
                             Order = 4,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 31,
-                            Name = "Podcast maken",
+                            Name = "Plantjes kweken",
                             Order = 0,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 32,
-                            Name = "Een radiozender beginnen",
+                            Name = "Breien of haken",
                             Order = 1,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 33,
-                            Name = "Programmeren",
+                            Name = "Naar de film gaan",
                             Order = 2,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 34,
-                            Name = "Basketbal",
+                            Name = "Taarten bakken",
                             Order = 3,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 35,
-                            Name = "Kleding maken",
+                            Name = "Houtbewerken",
                             Order = 4,
                             TalentId = 7
                         },
@@ -1593,10 +1593,6 @@ namespace TalentDataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Initials")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<bool>("IsProfileVisible")
                         .HasColumnType("boolean");
 
@@ -1685,7 +1681,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Product Owner",
                             LinkedInUrl = "",
@@ -1719,7 +1714,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Scrum Master",
                             LinkedInUrl = "",
@@ -1753,7 +1747,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Senior Developer",
                             LinkedInUrl = "",
@@ -1787,7 +1780,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Junior Frontend Developer",
                             LinkedInUrl = "",
@@ -1821,7 +1813,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Frontend Developer",
                             LinkedInUrl = "",
@@ -1855,7 +1846,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Backend Developer",
                             LinkedInUrl = "",
@@ -1889,7 +1879,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Fullstack Developer",
                             LinkedInUrl = "",
@@ -1923,7 +1912,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Product Owner",
                             LinkedInUrl = "https://www.linkedin.com/in/dennis-olislagers-442b3a68",
@@ -1957,7 +1945,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Front End Developer",
                             LinkedInUrl = "",
@@ -1991,7 +1978,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Applicatie- en Mediaontwikkelaar",
                             LinkedInUrl = "https://www.linkedin.com/in/kelvinkohl",
@@ -2025,7 +2011,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Fullstack Software Engineer",
                             LinkedInUrl = "",
@@ -2059,7 +2044,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Fullstack Software Engineer",
                             LinkedInUrl = "",
@@ -2093,7 +2077,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Software Engineer",
                             LinkedInUrl = "https://www.linkedin.com/in/roel-van-deursen-851058231",
@@ -2127,7 +2110,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Scrum Master / Product Owner",
                             LinkedInUrl = "https://www.linkedin.com/in/jos-broeren4918833",
