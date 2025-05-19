@@ -15,6 +15,8 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         [Required]
         public string Name { get; set; } = string.Empty; // TODO: remove when possible, used in CreateTalentNewData 
         [Required]
+        public string initials { get; set; } = string.Empty; 
+        [Required]
         public string GivenName { get; set; } = string.Empty;
         [Required]
         public string Surname { get; set; } = string.Empty;
