@@ -6,136 +6,24 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TalentDataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class initialsupdate : Migration
+    public partial class TalentUpdate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<string>(
+                name: "Initials",
+                schema: "TalentenPortaal",
+                table: "Talent",
+                type: "text",
+                nullable: false,
+                defaultValue: "");
+
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
                 table: "Hobby",
                 keyColumn: "Id",
                 keyValue: 1,
-                column: "Name",
-                value: "Video’s bewerken (TikTokken!)");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 2,
-                column: "Name",
-                value: "Papier-maché");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 3,
-                column: "Name",
-                value: "Lezen");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 4,
-                column: "Name",
-                value: "Photoshoppen");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 5,
-                column: "Name",
-                value: "Hiken");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 6,
-                column: "Name",
-                value: "Programmeren");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 7,
-                column: "Name",
-                value: "Kaarten maken");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 8,
-                column: "Name",
-                value: "Auto’s restaureren");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 9,
-                column: "Name",
-                value: "Schilderen");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 10,
-                column: "Name",
-                value: "Tuinieren");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 11,
-                column: "Name",
-                value: "Zeefdrukken maken");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 12,
-                column: "Name",
-                value: "Fotografie");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 13,
-                column: "Name",
-                value: "Sleutelen aan fietsen");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 14,
-                column: "Name",
-                value: "Dansen");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 15,
-                column: "Name",
-                value: "Kaarsen maken");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 16,
                 column: "Name",
                 value: "Bootcamp");
 
@@ -143,119 +31,39 @@ namespace TalentDataAccess.Migrations
                 schema: "TalentenPortaal",
                 table: "Hobby",
                 keyColumn: "Id",
-                keyValue: 17,
+                keyValue: 2,
                 column: "Name",
-                value: "Apps ontwikkelen");
+                value: "Sleutelen aan fietsen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
                 table: "Hobby",
                 keyColumn: "Id",
-                keyValue: 18,
+                keyValue: 3,
                 column: "Name",
-                value: "Kaarten maken");
+                value: "Grafisch ontwerpen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
                 table: "Hobby",
                 keyColumn: "Id",
-                keyValue: 19,
+                keyValue: 4,
                 column: "Name",
-                value: "Domotica");
+                value: "Hardlopen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
                 table: "Hobby",
                 keyColumn: "Id",
-                keyValue: 20,
+                keyValue: 5,
                 column: "Name",
-                value: "Je eigen bier brouwen");
+                value: "Schrijven");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
                 table: "Hobby",
                 keyColumn: "Id",
-                keyValue: 21,
-                column: "Name",
-                value: "Plantjes kweken");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 22,
-                column: "Name",
-                value: "Origami");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 23,
-                column: "Name",
-                value: "Een podcast maken");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 24,
-                column: "Name",
-                value: "Apps ontwikkelen");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 25,
-                column: "Name",
-                value: "Films kijken");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 26,
-                column: "Name",
-                value: "Naar de film gaan");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 27,
-                column: "Name",
-                value: "Websites bouwen");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 29,
-                column: "Name",
-                value: "Gamen");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 30,
-                column: "Name",
-                value: "Acteren");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 31,
-                column: "Name",
-                value: "Plantjes kweken");
-
-            migrationBuilder.UpdateData(
-                schema: "TalentenPortaal",
-                table: "Hobby",
-                keyColumn: "Id",
-                keyValue: 32,
+                keyValue: 6,
                 column: "Name",
                 value: "Breien of haken");
 
@@ -263,9 +71,217 @@ namespace TalentDataAccess.Migrations
                 schema: "TalentenPortaal",
                 table: "Hobby",
                 keyColumn: "Id",
+                keyValue: 7,
+                column: "Name",
+                value: "Een podcast maken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 8,
+                column: "Name",
+                value: "Sterrenkijken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 9,
+                column: "Name",
+                value: "Kaarten maken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 10,
+                column: "Name",
+                value: "Een taal leren");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 11,
+                column: "Name",
+                value: "Bootcamp");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 12,
+                column: "Name",
+                value: "Een podcast maken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 13,
+                column: "Name",
+                value: "Vogelspotten");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 14,
+                column: "Name",
+                value: "Robots bouwen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 15,
+                column: "Name",
+                value: "Puzzelen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 16,
+                column: "Name",
+                value: "Een radiozender beginnen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 17,
+                column: "Name",
+                value: "Fotografie");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 18,
+                column: "Name",
+                value: "Pilates");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 19,
+                column: "Name",
+                value: "Basketbal");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 20,
+                column: "Name",
+                value: "Pottenbakken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 21,
+                column: "Name",
+                value: "Robots bouwen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 22,
+                column: "Name",
+                value: "Je eigen bier brouwen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 23,
+                column: "Name",
+                value: "Koken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 24,
+                column: "Name",
+                value: "Modelbouw");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 25,
+                column: "Name",
+                value: "Kaarsen maken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 26,
+                column: "Name",
+                value: "Sterrenkijken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 27,
+                column: "Name",
+                value: "Gamen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 28,
+                column: "Name",
+                value: "Papier-maché");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 29,
+                column: "Name",
+                value: "Hardlopen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 30,
+                column: "Name",
+                value: "Een radiozender beginnen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 31,
+                column: "Name",
+                value: "Vogelspotten");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 32,
+                column: "Name",
+                value: "Podcast maken");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
                 keyValue: 33,
                 column: "Name",
-                value: "Naar de film gaan");
+                value: "Tekenen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -273,7 +289,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 34,
                 column: "Name",
-                value: "Taarten bakken");
+                value: "Kaarsen maken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -281,7 +297,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 35,
                 column: "Name",
-                value: "Houtbewerken");
+                value: "Papier-maché");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -586,18 +602,135 @@ namespace TalentDataAccess.Migrations
                 keyValue: 38,
                 column: "Tasks",
                 value: new List<string>());
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 1,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 2,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 3,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 4,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 5,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 6,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 7,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 8,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 9,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 10,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 11,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 12,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 13,
+                column: "Initials",
+                value: "");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Talent",
+                keyColumn: "Id",
+                keyValue: 14,
+                column: "Initials",
+                value: "");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropColumn(
+                name: "Initials",
+                schema: "TalentenPortaal",
+                table: "Talent");
+
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
                 table: "Hobby",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "Name",
-                value: "Breien of haken");
+                value: "Video’s bewerken (TikTokken!)");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -605,7 +738,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "Name",
-                value: "Grafisch ontwerpen");
+                value: "Papier-maché");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -613,7 +746,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "Name",
-                value: "Fietsen");
+                value: "Lezen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -621,7 +754,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "Name",
-                value: "Glas-in-lood maken");
+                value: "Photoshoppen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -629,7 +762,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 5,
                 column: "Name",
-                value: "Kleding maken");
+                value: "Hiken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -637,7 +770,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 6,
                 column: "Name",
-                value: "Hardlopen");
+                value: "Programmeren");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -645,7 +778,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 7,
                 column: "Name",
-                value: "Lezen");
+                value: "Kaarten maken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -653,7 +786,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 8,
                 column: "Name",
-                value: "Fietsen");
+                value: "Auto’s restaureren");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -661,7 +794,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 9,
                 column: "Name",
-                value: "Taarten bakken");
+                value: "Schilderen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -669,7 +802,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 10,
                 column: "Name",
-                value: "Pilates");
+                value: "Tuinieren");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -677,7 +810,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 11,
                 column: "Name",
-                value: "Robots bouwen");
+                value: "Zeefdrukken maken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -685,7 +818,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 12,
                 column: "Name",
-                value: "Zwemmen");
+                value: "Fotografie");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -693,7 +826,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 13,
                 column: "Name",
-                value: "Borduren");
+                value: "Sleutelen aan fietsen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -701,7 +834,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 14,
                 column: "Name",
-                value: "Schaken");
+                value: "Dansen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -709,7 +842,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 15,
                 column: "Name",
-                value: "Grafisch ontwerpen");
+                value: "Kaarsen maken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -717,7 +850,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 16,
                 column: "Name",
-                value: "Muziek luisteren");
+                value: "Bootcamp");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -725,7 +858,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 17,
                 column: "Name",
-                value: "Lezen");
+                value: "Apps ontwikkelen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -733,7 +866,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 18,
                 column: "Name",
-                value: "Photoshoppen");
+                value: "Kaarten maken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -741,7 +874,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 19,
                 column: "Name",
-                value: "Plantjes kweken");
+                value: "Domotica");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -749,7 +882,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 20,
                 column: "Name",
-                value: "Basketbal");
+                value: "Je eigen bier brouwen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -757,7 +890,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 21,
                 column: "Name",
-                value: "Scrapbooking");
+                value: "Plantjes kweken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -765,7 +898,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 22,
                 column: "Name",
-                value: "Bootcamp");
+                value: "Origami");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -773,7 +906,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 23,
                 column: "Name",
-                value: "Origami");
+                value: "Een podcast maken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -781,7 +914,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 24,
                 column: "Name",
-                value: "Netflixen");
+                value: "Apps ontwikkelen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -789,7 +922,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 25,
                 column: "Name",
-                value: "Vogelspotten");
+                value: "Films kijken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -797,7 +930,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 26,
                 column: "Name",
-                value: "Dansen");
+                value: "Naar de film gaan");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -805,7 +938,15 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 27,
                 column: "Name",
-                value: "Meubelmaken");
+                value: "Websites bouwen");
+
+            migrationBuilder.UpdateData(
+                schema: "TalentenPortaal",
+                table: "Hobby",
+                keyColumn: "Id",
+                keyValue: 28,
+                column: "Name",
+                value: "Podcast maken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -813,7 +954,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 29,
                 column: "Name",
-                value: "Muziek luisteren");
+                value: "Gamen");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -821,7 +962,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 30,
                 column: "Name",
-                value: "Skateboarden");
+                value: "Acteren");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -829,7 +970,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 31,
                 column: "Name",
-                value: "Hiken");
+                value: "Plantjes kweken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -837,7 +978,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 32,
                 column: "Name",
-                value: "Cocktails maken");
+                value: "Breien of haken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -845,7 +986,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 33,
                 column: "Name",
-                value: "Skateboarden");
+                value: "Naar de film gaan");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -853,7 +994,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 34,
                 column: "Name",
-                value: "Computers bouwen");
+                value: "Taarten bakken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
@@ -861,7 +1002,7 @@ namespace TalentDataAccess.Migrations
                 keyColumn: "Id",
                 keyValue: 35,
                 column: "Name",
-                value: "Een taal leren");
+                value: "Houtbewerken");
 
             migrationBuilder.UpdateData(
                 schema: "TalentenPortaal",
