@@ -64,7 +64,7 @@ namespace TalentDataAccess.DataAccess.Repositories
                 .AsNoTracking()
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
-                .SingleOrDefaultAsync(x => x.Id == id && x.IsProfileVisible)
+                .SingleOrDefaultAsync(x => x.Id == id)
                 .ConfigureAwait(false);
         }       
 

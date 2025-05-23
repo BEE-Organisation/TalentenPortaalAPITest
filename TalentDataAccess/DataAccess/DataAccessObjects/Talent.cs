@@ -11,8 +11,45 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         [Key]
         public int Id { get; set; }
 
+        #region Personal Information
         [Required]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty; // TODO: remove when possible, used in CreateTalentNewData 
+        [Required]
+        public string Initials { get; set; } = string.Empty; 
+        [Required]
+        public string GivenName { get; set; } = string.Empty;
+        [Required]
+        public string Surname { get; set; } = string.Empty;
+        public string NamePrefix { get; set; } = string.Empty;
+        [Required]
+        public DateTime DateOfBirth { get; set; }
+        #endregion
+
+        #region Adress
+        [Required]
+        public string Municipality { get; set; } = string.Empty;
+        public string Province { get; set; } = string.Empty;
+        public string Street { get; set; } = string.Empty;
+        public string HouseNumber { get; set; } = string.Empty;
+        public string HouseNumberSuffix { get; set; } = string.Empty;
+        public string PostalCode { get; set; } = string.Empty;
+        public string CountryCode { get; set; } = string.Empty;
+        #endregion
+
+        #region Contact
+        public string Email { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
+        public string LinkedInUrl { get; set; } = string.Empty;
+        public string ContactOptions { get; set; } = string.Empty;
+        #endregion
+
+        #region Media
+        public string ProfilePhotoRef { get; set; } = string.Empty;
+        public string PitchUrl { get; set; } = string.Empty;
+        public string LoopUrl { get; set; } = string.Empty;
+        //CVUrl = added for Bee-Organisation.
+        public string CvUrl { get; set; } = string.Empty;
+        #endregion
 
         [ForeignKey("Organization")]
         public int? OrganisationId { get; set; }
@@ -23,25 +60,13 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         [Required]
         public string Description { get; set; } = string.Empty;
         //Karakterschets => to Properties.
-        [Required]
+        //[Required]
         //public string CharacterTraits { get; set; } = string.Empty;
-        public DateTime DateOfBirth { get; set; }
+
 
         //Education as Denkniveau
         public string Education { get; set; } = string.Empty;
-        [Required]
-        public string Municipality { get; set; } = string.Empty;
-        public string Province {  get; set; } = string.Empty;
-        public string ProfilePhotoRef { get; set; } = string.Empty;
-        public string PitchUrl { get; set; } = string.Empty;
-
-        public string LoopUrl { get; set; } = string.Empty;
-
-        //CVUrl = added for Bee-Organisation.
-        public string CvUrl { get; set; } = string.Empty;
-
-        public string LinkedInUrl { get; set; } = string.Empty;
-        public string ContactOptions { get; set; } = string.Empty;
+               
         public int TravelDistance { get; set; } = 0;
         public string DesiredWorkLocation {  get; set; } = string.Empty;
 
@@ -71,7 +96,7 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         public ICollection<EducationDetail>? EducationDetails { get; set; }
         public bool IsProfileVisible { get; set; }
     }
-    
+    /*
     //  Default setup
     public class Property
     {
@@ -105,5 +130,5 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         public string? CustomName { get; set; }
         public int SkillLevel { get; set; }
     }
-
+    */
 }
