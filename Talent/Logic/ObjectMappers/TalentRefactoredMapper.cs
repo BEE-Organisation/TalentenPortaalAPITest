@@ -13,6 +13,7 @@ namespace TalentLogic.Logic.ObjectMappers
 
         public static BOTalentRefactored Map(Talent model)
         {
+            //From entity to BO
             BOTalentRefactored bo = new BOTalentRefactored();
             bo.Id = model.Id;
             bo.Name = model.Name;
@@ -30,7 +31,7 @@ namespace TalentLogic.Logic.ObjectMappers
             bo.JobTitle = model.JobTitle;
             bo.Description  = model.Description;
             //bo.CharacterTraits = model.CharacterTraits;
-            bo.DateOfBirth = model.DateOfBirth.ToString();
+            bo.DateOfBirth = model.DateOfBirth.ToString("yyyy-MM-dd");
             bo.Education = model.Education;
             bo.Municipality = model.Municipality;
             bo.Province = model.Province;
@@ -62,6 +63,7 @@ namespace TalentLogic.Logic.ObjectMappers
 
         public static Talent Map(BOTalentRefactored bo)
         {
+            //From BO to entity
             Talent model = new Talent();
 
             if(bo.Id != null)
@@ -87,7 +89,10 @@ namespace TalentLogic.Logic.ObjectMappers
 
             model.JobTitle = bo.JobTitle;
             model.Description = bo.Description;
-            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
+//            model.DateOfBirth = DateOnly.Parse(bo.DateOfBirth);
+            var dateOfBirth = DateOnly.FromDateTime(DateTime.ParseExact(bo.DateOfBirth, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
+            model.DateOfBirth = dateOfBirth;
+//            model.DateOfBirth = DateOnly.FromDateTime(DateTime.Parse(bo.DateOfBirth));
             model.Education = bo.Education;
             model.Municipality = bo.Municipality;
             model.Province = bo.Province;

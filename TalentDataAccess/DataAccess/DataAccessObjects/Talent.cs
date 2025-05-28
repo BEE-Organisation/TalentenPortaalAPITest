@@ -25,7 +25,7 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         //Karakterschets => to Properties.
         [Required]
         //public string CharacterTraits { get; set; } = string.Empty;
-        public DateTime DateOfBirth { get; set; }
+        public DateOnly DateOfBirth { get; set; }
 
         //Education as Denkniveau
         public string Education { get; set; } = string.Empty;
