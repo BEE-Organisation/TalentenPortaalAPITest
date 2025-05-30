@@ -160,7 +160,7 @@ namespace TalentLogic.Logic.ObjectMappers
             model.JobTitle = bo.JobTitle;
             model.Description = bo.Description;
 //            model.DateOfBirth = DateOnly.Parse(bo.DateOfBirth);
-            var dateOfBirth = DateOnly.FromDateTime(DateTime.ParseExact(bo.DateOfBirth, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
+            var dateOfBirth = DateOnly.FromDateTime(DateTime.ParseExact(bo.DateOfBirth, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
             model.DateOfBirth = dateOfBirth;
 //            model.DateOfBirth = DateOnly.FromDateTime(DateTime.Parse(bo.DateOfBirth));
             model.Education = bo.Education;
