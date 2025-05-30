@@ -105,7 +105,7 @@ namespace TalentLogic.Logic.ObjectMappers
             model.GivenName = bo.GivenName;
             model.Surname = bo.Surname;
             model.NamePrefix = bo.NamePrefix;
-            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
+//            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
 
             #endregion
 
