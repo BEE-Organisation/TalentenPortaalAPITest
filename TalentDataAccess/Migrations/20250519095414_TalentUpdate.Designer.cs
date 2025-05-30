@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TalentDataAccess.DataAccess;
@@ -12,9 +13,11 @@ using TalentDataAccess.DataAccess;
 namespace TalentDataAccess.Migrations
 {
     [DbContext(typeof(TalentDbContext))]
-    partial class TalentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250519095414_TalentUpdate")]
+    partial class TalentUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1556,8 +1559,8 @@ namespace TalentDataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateOnly>("DateOfBirth")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -1673,7 +1676,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1955, 1, 6),
+                            DateOfBirth = new DateTime(1955, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Maakt mensen graag aan het lachen.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -1707,7 +1710,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1974, 1, 30),
+                            DateOfBirth = new DateTime(1974, 1, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Debiteuren en crediteuren is echt zijn ding.",
                             DesiredWorkLocation = "Thuis/Kantoor",
                             Education = "HBO",
@@ -1741,7 +1744,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1989, 5, 29),
+                            DateOfBirth = new DateTime(1989, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Een echte kei in Desktop Publishing.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1775,7 +1778,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1988, 3, 21),
+                            DateOfBirth = new DateTime(1988, 3, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Verkoopt graag in een winkel.",
                             DesiredWorkLocation = "Remote/Kantoor",
                             Education = "MBO",
@@ -1809,7 +1812,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1987, 9, 30),
+                            DateOfBirth = new DateTime(1987, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Brengt graag mensen naar een bestemming.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1843,7 +1846,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1990, 8, 31),
+                            DateOfBirth = new DateTime(1990, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administratie is haar lust en haar leven.",
                             DesiredWorkLocation = "Remote/Kantoor",
                             Education = "MBO",
@@ -1877,7 +1880,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1991, 7, 30),
+                            DateOfBirth = new DateTime(1991, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Maakt ook graag een praatje met de mensen.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1911,7 +1914,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1972, 6, 12),
+                            DateOfBirth = new DateTime(1972, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Mijn passie is om mensen behulpzaam te zijn door producten te maken die mensen helpen in hun dagelijkse werkzaamheden. Als Product Owner/ (Scrum Master/Projectleider) ben ik de bruggenbouwer die hier dagelijks voor zorgt en hier haal ik elke dag veel voldoening uit. In de toekomst wil ik meer complexere vraagstukken vanuit de business kunnen vertalen naar goede software matige oplossingen. Bij BEE-Ideas heb ik beide aspecten van het SCRUM proces leren kennen doordat ik zowel de rol van Product Owner als de rol van Scrum Master heb bekleed.",
                             DesiredWorkLocation = "Hybride - Thuis/Kantoor",
                             Education = "HBO",
@@ -1945,7 +1948,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1994, 5, 2),
+                            DateOfBirth = new DateTime(1994, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Websites maken, gamen, het web afstruinen, computers bouwen - van kinds af aan fascineerde de IT mij al.  Tijdens mijn carriere in de ruimtelijke ordening heb ik veel vaardigheid ontwikkeld in projectmatig werken - zowel zelfstandig als in teamverband. Ik kreeg echter te weinig uitdaging en mijn interesse in het vak ebde weg .  Nadat ik in 2017 door een operatie van epilepsie ben genezen, heb ik besloten om van mijn liefde voor de IT - en met name front-end development - mijn beroep te gaan maken. Met cursussen, een IT-traineeship en zelfstandige projecten heb ik een professioneel niveau bereikt.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -1979,7 +1982,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1992, 12, 1),
+                            DateOfBirth = new DateTime(1992, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik omschrijf mijzelf als een positief persoon die altijd direct op zoek gaat naar de juiste oplossing voor een probleem. Over de jaren ben ik erg gegroeid in het herkennen van mijn goede kwaliteiten maar zo ook mijn valkuilen. Communicatie vind ik zeer belangrijk.  Op een technisch niveau heb ik interesse in front-end development en wil mij daar ook graag verder in ontwikkelen. Tijdens mijn opleiding heb ik grotendeels met PHP gewerkt met de OOP methode. SQL kwam ook te pas. In mijn zelfstudie heb ik mij verdiept in React.js.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "MBO",
@@ -2013,7 +2016,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1960, 4, 12),
+                            DateOfBirth = new DateTime(1960, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Als werknemer wens ik als loyale teamplayer intellectueel uitgedaagd te worden. Het geeft mij voldoening tegenslagen te overwinnen en samen fantastische prestaties te behalen. Ik vind het heerlijk om gezamenlijk (maar soms ook zelfstandig) een zowel technisch als functioneel kwalitatief hoogstaand product op te leveren.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -2047,7 +2050,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1986, 11, 22),
+                            DateOfBirth = new DateTime(1986, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik vind het leuk om te programmeren, ben  hier ook in mijn vrije tijd veel mee bezig. Zo heb ik bijvoorbeeld een berechtingssyteem gemaakt voor gewichthefwedstrijden op basis van een arduino. Ik kan goed zelfstandig werken. Ook doe ik mijn werk secuur en met veel aandacht voor details.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "HBO",
@@ -2081,7 +2084,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1988, 4, 27),
+                            DateOfBirth = new DateTime(1988, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik ben een gedreven software-ontwikkelaar met een sterke technische achtergrond en een passie voor innovatie. Mijn\r\nvoortdurende zoektocht naar uitdagingen stelt me in staat om op de hoogte te blijven van de nieuwste technologische trends en\r\ndeze toe te passen om bestaande projecten te versterken en nieuwe te initiëren. Mijn ambitie is om samen met getalenteerde\r\nteams hoogwaardige producten te creëren waar we allemaal trots op zijn. Mijn focus ligt op het leveren van kwaliteit en het\r\nontwikkelen van innovatieve, probleemoplossende oplossingen.",
                             DesiredWorkLocation = "Remote",
                             Education = "HBO",
@@ -2115,7 +2118,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1960, 3, 17),
+                            DateOfBirth = new DateTime(1960, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Technisch onderlegde en didactisch vaardige scrum master.Door diverse functies in software engineering ben ik technischonderlegd in allerlei takken van software ontwikkeling. Tevensheb ik jarenlang als docent wiskunde voor de klas gestaanwaarbij diverse sturende en motiverende vaardigheden belangrijkzijn. Tot mijn verrassing komen vele onderdelen uit deze functiesheel mooi samen in de rol van een scrum master. Ik wil nu graagalles combineren en inzetten om tot een mooi mogelijk resultaatte komen met een scrum team.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "HBO",

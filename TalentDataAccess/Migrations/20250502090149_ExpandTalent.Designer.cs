@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TalentDataAccess.DataAccess;
@@ -12,9 +13,11 @@ using TalentDataAccess.DataAccess;
 namespace TalentDataAccess.Migrations
 {
     [DbContext(typeof(TalentDbContext))]
-    partial class TalentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250502090149_ExpandTalent")]
+    partial class ExpandTalent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -591,245 +594,245 @@ namespace TalentDataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Bootcamp",
+                            Name = "Breien of haken",
                             Order = 0,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Sleutelen aan fietsen",
+                            Name = "Grafisch ontwerpen",
                             Order = 1,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Grafisch ontwerpen",
+                            Name = "Fietsen",
                             Order = 2,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Hardlopen",
+                            Name = "Glas-in-lood maken",
                             Order = 3,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Schrijven",
+                            Name = "Kleding maken",
                             Order = 4,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Breien of haken",
+                            Name = "Hardlopen",
                             Order = 0,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 7,
-                            Name = "Een podcast maken",
+                            Name = "Lezen",
                             Order = 1,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 8,
-                            Name = "Sterrenkijken",
+                            Name = "Fietsen",
                             Order = 2,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 9,
-                            Name = "Kaarten maken",
+                            Name = "Taarten bakken",
                             Order = 3,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 10,
-                            Name = "Een taal leren",
+                            Name = "Pilates",
                             Order = 4,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Bootcamp",
+                            Name = "Robots bouwen",
                             Order = 0,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 12,
-                            Name = "Een podcast maken",
+                            Name = "Zwemmen",
                             Order = 1,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 13,
-                            Name = "Vogelspotten",
+                            Name = "Borduren",
                             Order = 2,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 14,
-                            Name = "Robots bouwen",
+                            Name = "Schaken",
                             Order = 3,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 15,
-                            Name = "Puzzelen",
+                            Name = "Grafisch ontwerpen",
                             Order = 4,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 16,
-                            Name = "Een radiozender beginnen",
+                            Name = "Muziek luisteren",
                             Order = 0,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 17,
-                            Name = "Fotografie",
+                            Name = "Lezen",
                             Order = 1,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 18,
-                            Name = "Pilates",
+                            Name = "Photoshoppen",
                             Order = 2,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 19,
-                            Name = "Basketbal",
+                            Name = "Plantjes kweken",
                             Order = 3,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 20,
-                            Name = "Pottenbakken",
+                            Name = "Basketbal",
                             Order = 4,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 21,
-                            Name = "Robots bouwen",
+                            Name = "Scrapbooking",
                             Order = 0,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 22,
-                            Name = "Je eigen bier brouwen",
+                            Name = "Bootcamp",
                             Order = 1,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 23,
-                            Name = "Koken",
+                            Name = "Origami",
                             Order = 2,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 24,
-                            Name = "Modelbouw",
+                            Name = "Netflixen",
                             Order = 3,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 25,
-                            Name = "Kaarsen maken",
+                            Name = "Vogelspotten",
                             Order = 4,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 26,
-                            Name = "Sterrenkijken",
+                            Name = "Dansen",
                             Order = 0,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 27,
-                            Name = "Gamen",
+                            Name = "Meubelmaken",
                             Order = 1,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 28,
-                            Name = "Papier-maché",
+                            Name = "Podcast maken",
                             Order = 2,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 29,
-                            Name = "Hardlopen",
+                            Name = "Muziek luisteren",
                             Order = 3,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 30,
-                            Name = "Een radiozender beginnen",
+                            Name = "Skateboarden",
                             Order = 4,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 31,
-                            Name = "Vogelspotten",
+                            Name = "Hiken",
                             Order = 0,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 32,
-                            Name = "Podcast maken",
+                            Name = "Cocktails maken",
                             Order = 1,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 33,
-                            Name = "Tekenen",
+                            Name = "Skateboarden",
                             Order = 2,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 34,
-                            Name = "Kaarsen maken",
+                            Name = "Computers bouwen",
                             Order = 3,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 35,
-                            Name = "Papier-maché",
+                            Name = "Een taal leren",
                             Order = 4,
                             TalentId = 7
                         },
@@ -1556,8 +1559,8 @@ namespace TalentDataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateOnly>("DateOfBirth")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -1587,10 +1590,6 @@ namespace TalentDataAccess.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("HouseNumberSuffix")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Initials")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -1673,7 +1672,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1955, 1, 6),
+                            DateOfBirth = new DateTime(1955, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Maakt mensen graag aan het lachen.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -1682,7 +1681,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Product Owner",
                             LinkedInUrl = "",
@@ -1707,7 +1705,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1974, 1, 30),
+                            DateOfBirth = new DateTime(1974, 1, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Debiteuren en crediteuren is echt zijn ding.",
                             DesiredWorkLocation = "Thuis/Kantoor",
                             Education = "HBO",
@@ -1716,7 +1714,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Scrum Master",
                             LinkedInUrl = "",
@@ -1741,7 +1738,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1989, 5, 29),
+                            DateOfBirth = new DateTime(1989, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Een echte kei in Desktop Publishing.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1750,7 +1747,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Senior Developer",
                             LinkedInUrl = "",
@@ -1775,7 +1771,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1988, 3, 21),
+                            DateOfBirth = new DateTime(1988, 3, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Verkoopt graag in een winkel.",
                             DesiredWorkLocation = "Remote/Kantoor",
                             Education = "MBO",
@@ -1784,7 +1780,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Junior Frontend Developer",
                             LinkedInUrl = "",
@@ -1809,7 +1804,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1987, 9, 30),
+                            DateOfBirth = new DateTime(1987, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Brengt graag mensen naar een bestemming.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1818,7 +1813,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Frontend Developer",
                             LinkedInUrl = "",
@@ -1843,7 +1837,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1990, 8, 31),
+                            DateOfBirth = new DateTime(1990, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administratie is haar lust en haar leven.",
                             DesiredWorkLocation = "Remote/Kantoor",
                             Education = "MBO",
@@ -1852,7 +1846,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Backend Developer",
                             LinkedInUrl = "",
@@ -1877,7 +1870,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1991, 7, 30),
+                            DateOfBirth = new DateTime(1991, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Maakt ook graag een praatje met de mensen.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1886,7 +1879,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Fullstack Developer",
                             LinkedInUrl = "",
@@ -1911,7 +1903,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1972, 6, 12),
+                            DateOfBirth = new DateTime(1972, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Mijn passie is om mensen behulpzaam te zijn door producten te maken die mensen helpen in hun dagelijkse werkzaamheden. Als Product Owner/ (Scrum Master/Projectleider) ben ik de bruggenbouwer die hier dagelijks voor zorgt en hier haal ik elke dag veel voldoening uit. In de toekomst wil ik meer complexere vraagstukken vanuit de business kunnen vertalen naar goede software matige oplossingen. Bij BEE-Ideas heb ik beide aspecten van het SCRUM proces leren kennen doordat ik zowel de rol van Product Owner als de rol van Scrum Master heb bekleed.",
                             DesiredWorkLocation = "Hybride - Thuis/Kantoor",
                             Education = "HBO",
@@ -1920,7 +1912,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Product Owner",
                             LinkedInUrl = "https://www.linkedin.com/in/dennis-olislagers-442b3a68",
@@ -1945,7 +1936,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1994, 5, 2),
+                            DateOfBirth = new DateTime(1994, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Websites maken, gamen, het web afstruinen, computers bouwen - van kinds af aan fascineerde de IT mij al.  Tijdens mijn carriere in de ruimtelijke ordening heb ik veel vaardigheid ontwikkeld in projectmatig werken - zowel zelfstandig als in teamverband. Ik kreeg echter te weinig uitdaging en mijn interesse in het vak ebde weg .  Nadat ik in 2017 door een operatie van epilepsie ben genezen, heb ik besloten om van mijn liefde voor de IT - en met name front-end development - mijn beroep te gaan maken. Met cursussen, een IT-traineeship en zelfstandige projecten heb ik een professioneel niveau bereikt.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -1954,7 +1945,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Front End Developer",
                             LinkedInUrl = "",
@@ -1979,7 +1969,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1992, 12, 1),
+                            DateOfBirth = new DateTime(1992, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik omschrijf mijzelf als een positief persoon die altijd direct op zoek gaat naar de juiste oplossing voor een probleem. Over de jaren ben ik erg gegroeid in het herkennen van mijn goede kwaliteiten maar zo ook mijn valkuilen. Communicatie vind ik zeer belangrijk.  Op een technisch niveau heb ik interesse in front-end development en wil mij daar ook graag verder in ontwikkelen. Tijdens mijn opleiding heb ik grotendeels met PHP gewerkt met de OOP methode. SQL kwam ook te pas. In mijn zelfstudie heb ik mij verdiept in React.js.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "MBO",
@@ -1988,7 +1978,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Applicatie- en Mediaontwikkelaar",
                             LinkedInUrl = "https://www.linkedin.com/in/kelvinkohl",
@@ -2013,7 +2002,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1960, 4, 12),
+                            DateOfBirth = new DateTime(1960, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Als werknemer wens ik als loyale teamplayer intellectueel uitgedaagd te worden. Het geeft mij voldoening tegenslagen te overwinnen en samen fantastische prestaties te behalen. Ik vind het heerlijk om gezamenlijk (maar soms ook zelfstandig) een zowel technisch als functioneel kwalitatief hoogstaand product op te leveren.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -2022,7 +2011,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Fullstack Software Engineer",
                             LinkedInUrl = "",
@@ -2047,7 +2035,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1986, 11, 22),
+                            DateOfBirth = new DateTime(1986, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik vind het leuk om te programmeren, ben  hier ook in mijn vrije tijd veel mee bezig. Zo heb ik bijvoorbeeld een berechtingssyteem gemaakt voor gewichthefwedstrijden op basis van een arduino. Ik kan goed zelfstandig werken. Ook doe ik mijn werk secuur en met veel aandacht voor details.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "HBO",
@@ -2056,7 +2044,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Fullstack Software Engineer",
                             LinkedInUrl = "",
@@ -2081,7 +2068,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1988, 4, 27),
+                            DateOfBirth = new DateTime(1988, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik ben een gedreven software-ontwikkelaar met een sterke technische achtergrond en een passie voor innovatie. Mijn\r\nvoortdurende zoektocht naar uitdagingen stelt me in staat om op de hoogte te blijven van de nieuwste technologische trends en\r\ndeze toe te passen om bestaande projecten te versterken en nieuwe te initiëren. Mijn ambitie is om samen met getalenteerde\r\nteams hoogwaardige producten te creëren waar we allemaal trots op zijn. Mijn focus ligt op het leveren van kwaliteit en het\r\nontwikkelen van innovatieve, probleemoplossende oplossingen.",
                             DesiredWorkLocation = "Remote",
                             Education = "HBO",
@@ -2090,7 +2077,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Software Engineer",
                             LinkedInUrl = "https://www.linkedin.com/in/roel-van-deursen-851058231",
@@ -2115,7 +2101,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1960, 3, 17),
+                            DateOfBirth = new DateTime(1960, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Technisch onderlegde en didactisch vaardige scrum master.Door diverse functies in software engineering ben ik technischonderlegd in allerlei takken van software ontwikkeling. Tevensheb ik jarenlang als docent wiskunde voor de klas gestaanwaarbij diverse sturende en motiverende vaardigheden belangrijkzijn. Tot mijn verrassing komen vele onderdelen uit deze functiesheel mooi samen in de rol van een scrum master. Ik wil nu graagalles combineren en inzetten om tot een mooi mogelijk resultaatte komen met een scrum team.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "HBO",
@@ -2124,7 +2110,6 @@ namespace TalentDataAccess.Migrations
                             GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
-                            Initials = "",
                             IsProfileVisible = true,
                             JobTitle = "Scrum Master / Product Owner",
                             LinkedInUrl = "https://www.linkedin.com/in/jos-broeren4918833",
