@@ -14,7 +14,8 @@
     <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.8.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -25,6 +26,7 @@
     <ProjectReference Include="..\BlobStorage\BlobStorage.csproj" />
     <ProjectReference Include="..\CrossCuttingConcerns\CrossCuttingConcerns.csproj" />
     <ProjectReference Include="..\Talent\TalentLogic.csproj" />
+	 
   </ItemGroup>
 
 </Project>
