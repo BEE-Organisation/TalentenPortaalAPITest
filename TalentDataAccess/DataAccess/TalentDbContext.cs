@@ -13,6 +13,7 @@ namespace TalentDataAccess.DataAccess
         public DbSet<TalentPropertyLabel> TalentPropertyLabels { get; set; }
         public DbSet<TalentPropertyMainCategoryLink> TalentPropertyMainCategoryLinks { get; set; }        
         public DbSet<TalentPropertySubCategoryLink> TalentPropertySubCategoryLinks { get; set; }
+        public DbSet<SkillType> SkillTypes { get; set; }
         public DbSet<Organization> Organizations { get; set; }
 
         public DbSet<Company> Companies { get; set; }
