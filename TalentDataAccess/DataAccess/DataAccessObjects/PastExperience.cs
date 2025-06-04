@@ -15,8 +15,8 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
     {
         [Key]
         public int Id { get; set; }
-        public string DateFrom { get; set; } = string.Empty;
-        public string DateTill { get; set; } = string.Empty;
+        public DateOnly? DateFrom { get; set; } = DateOnly.MinValue;
+        public DateOnly? DateTill { get; set; } = DateOnly.MaxValue;
         public string Company { get; set; } = string.Empty;
         public string Function { get; set; } = string.Empty;
 

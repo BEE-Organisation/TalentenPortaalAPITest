@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TalentDataAccess.DataAccess;
@@ -12,9 +13,11 @@ using TalentDataAccess.DataAccess;
 namespace TalentDataAccess.Migrations
 {
     [DbContext(typeof(TalentDbContext))]
-    partial class TalentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250603134025_UpdateDateFromTillToDateOnly")]
+    partial class UpdateDateFromTillToDateOnly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
