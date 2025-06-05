@@ -53,6 +53,7 @@ namespace TalentDataAccess.DataAccess.Repositories
                 .AsNoTracking()
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
+                    .ThenInclude(x => x.SkillType)
                 .OrderByDescending(x => x.Id)
                 .ToListAsync()
                 .ConfigureAwait(false);
@@ -77,6 +78,7 @@ namespace TalentDataAccess.DataAccess.Repositories
                 .AsNoTracking()
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
+                    .ThenInclude(x => x.SkillType)
                 .Where(x => x.IsProfileVisible && x.FoundJob == false)
                 .Where(x => x.OrganisationId == targetOrganization)
                 .OrderByDescending(x => x.Id);
@@ -141,6 +143,7 @@ namespace TalentDataAccess.DataAccess.Repositories
                 .AsNoTracking()
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
+                    .ThenInclude(x => x.SkillType)
                 .SingleOrDefaultAsync(x => x.Id == id && x.IsProfileVisible && x.OrganisationId == targetOrganization)
                 .ConfigureAwait(false);
         }
@@ -171,7 +174,8 @@ namespace TalentDataAccess.DataAccess.Repositories
 
             IQueryable<Talent> query = _dbContext.Talents
                 .Include(x => x.TalentPropertyMainCategoryLinks)
-                .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order));
+                .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
+                    .ThenInclude(x => x.SkillType);
 
             if (filters.Provinces.Count() > 0)
             {
@@ -229,6 +233,7 @@ namespace TalentDataAccess.DataAccess.Repositories
                 .AsNoTracking()
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
+                    .ThenInclude(x => x.SkillType)
                 .OrderByDescending(x => x.Id)
                 .Where(x => ids.Contains(x.Id) && x.OrganisationId == targetOrganization && x.IsProfileVisible == true && x.FoundJob == false)
                 .ToListAsync()
