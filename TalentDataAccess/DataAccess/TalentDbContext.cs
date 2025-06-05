@@ -43,6 +43,13 @@ namespace TalentDataAccess.DataAccess
                 .HasIndex(x => x.Name)
                 .IsUnique();
 
+            modelBuilder.Entity<TalentPropertySubCategoryLink>()
+                .HasOne(x => x.SkillType)
+                .WithMany(x => x.TalentPropertySubCategoryLinks) 
+                .HasForeignKey(x => x.SkillTypeId)
+                .OnDelete(DeleteBehavior.Restrict); 
+
+
             //Create example data.            
             modelBuilder.Entity<EducationDetail>().HasData(
                 CreateEducationDetails.Create()

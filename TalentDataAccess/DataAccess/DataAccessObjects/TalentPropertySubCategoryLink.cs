@@ -23,8 +23,8 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         [ForeignKey("TalentPropertyMainCategoryLink")]
         public int TalentPropertyMainCategoryLinkId { get; set; }
 
-        public int? SkillTypeId { get; set; }
-        public SkillType SkillType { get; set; }
+        public int SkillTypeId { get; set; } 
+        public SkillType SkillType { get; set; } = null!; 
 
         public TalentPropertyMainCategoryLink TalentPropertyMainCategoryLink { get; set; }
 
