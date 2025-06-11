@@ -12,6 +12,52 @@ namespace TalentDataAccess.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+
+            migrationBuilder.Sql(@"
+            ALTER TABLE ""TalentenPortaal"".""PastExperience""
+            ALTER COLUMN ""DateTill"" DROP NOT NULL;
+            ");
+
+            migrationBuilder.Sql(@"
+            ALTER TABLE ""TalentenPortaal"".""PastExperience""
+            ALTER COLUMN ""DateTill"" TYPE date
+            USING (NULLIF(TRIM(""DateTill""), '')::date);
+            ");
+
+            migrationBuilder.Sql(@"
+            ALTER TABLE ""TalentenPortaal"".""PastExperience""
+            ALTER COLUMN ""DateFrom"" DROP NOT NULL;
+            ");
+            
+            migrationBuilder.Sql(@"
+            ALTER TABLE ""TalentenPortaal"".""PastExperience""
+            ALTER COLUMN ""DateFrom"" TYPE date
+            USING (NULLIF(TRIM(""DateFrom""), '')::date);
+            ");
+                  
+            migrationBuilder.Sql(@"
+            ALTER TABLE ""TalentenPortaal"".""EducationDetail""
+            ALTER COLUMN ""DateTill"" DROP NOT NULL;
+            ");
+
+            migrationBuilder.Sql(@"
+            ALTER TABLE ""TalentenPortaal"".""EducationDetail""
+            ALTER COLUMN ""DateTill"" TYPE date
+            USING (NULLIF(TRIM(""DateTill""), '')::date);
+            ");
+
+            migrationBuilder.Sql(@"
+            ALTER TABLE ""TalentenPortaal"".""EducationDetail""
+            ALTER COLUMN ""DateFrom"" DROP NOT NULL;
+            ");
+            
+            migrationBuilder.Sql(@"
+            ALTER TABLE ""TalentenPortaal"".""EducationDetail""
+            ALTER COLUMN ""DateFrom"" TYPE date
+            USING (NULLIF(TRIM(""DateFrom""), '')::date);
+            ");
+
+
             migrationBuilder.AlterColumn<DateOnly>(
                 name: "DateTill",
                 schema: "TalentenPortaal",
