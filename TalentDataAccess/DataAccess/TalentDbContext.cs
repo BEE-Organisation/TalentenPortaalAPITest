@@ -28,7 +28,7 @@ namespace TalentDataAccess.DataAccess
             : base(options)
         {
         }
-
+/*
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -96,6 +96,7 @@ namespace TalentDataAccess.DataAccess
             );
 
         }
+*/
     }
 
 }
