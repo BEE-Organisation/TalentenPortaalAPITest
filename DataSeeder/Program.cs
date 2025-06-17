@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 using TalentDataAccess.DataAccess;
+using TalentDataAccess.DataAccess.DataSeeders;
 
 namespace DataSeeder
 {
@@ -27,6 +28,7 @@ namespace DataSeeder
             );
 
             var provider = serviceCollection.BuildServiceProvider();
+            
             var mainDbContext = provider.GetService<TalentDbContext>();
 
             try
@@ -35,8 +37,13 @@ namespace DataSeeder
                 {
                     await mainDbContext.Database.EnsureCreatedAsync();
 
-                    //DataSeeders here.
-                    await SubCategorySeeder.Seed(mainDbContext);
+                    //Seed with the following seeders
+
+                    await TalentSeeder.Seed(mainDbContext);
+                    await TalentPropertyLabelSeeder.Seed(mainDbContext);
+                    await TalentPropertyMainCategoryLinkSeeder.Seed(mainDbContext);
+                    await TalentPropertySubCategoryLinkSeeder.Seed(mainDbContext);
+
 
                     await mainDbContext.DisposeAsync();
                     Console.WriteLine("Database gevuld met data. Druk op een knop om af te sluiten.");
