@@ -1,13 +1,4 @@
-﻿using Azure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using TalentDataAccess.DataAccess.DataAccessObjects;
-using static Azure.Core.HttpHeader;
-using static System.Net.Mime.MediaTypeNames;
+﻿using TalentDataAccess.DataAccess.DataAccessObjects;
 
 namespace TalentDataAccess.DataAccess.ExampleData
 {

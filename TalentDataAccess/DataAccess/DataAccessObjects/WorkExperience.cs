@@ -2,12 +2,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using CrossCuttingConcerns.EntityFrameworkGenerics;
 
-
-
-
-
-
-//OUTDATED: REVIEW AND DELETE
 namespace TalentDataAccess.DataAccess.DataAccessObjects
 {
     [Table("WorkExperience", Schema = "TalentenPortaal")]

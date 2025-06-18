@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using TalentDataAccess.DataAccess.DataAccessObjects;
 
 namespace TalentDataAccess.DataAccess.ExampleData
@@ -97,49 +93,6 @@ namespace TalentDataAccess.DataAccess.ExampleData
             };
 
 
-
-  /*          string[] to = new string[] {
-                "december 1998",
-                "november 2021",
-                "januari 2023",
-                "maart 2023",
-                "juli 2020",
-                "09/2019",
-                "10-2019",
-                "Heden",
-                "02-2023",
-                "11-2021",
-                "08-2018",
-                "Heden",
-                "12-2018",
-                "09-2016",
-                "08-2015",
-                "Heden",
-                "06-2023",
-                "05-2022",
-                "Heden",
-                "1-2022",
-                "10-2010",
-                "12-2004",
-                "Heden",
-                "10-2022",
-                "01-2011",
-                "Heden",
-                "12/7/2023",
-                "27/8/2010",
-                "30/9/2023",
-                "30/11/2022",
-                "31-3-2022",
-                "30-4-2013",
-                "31-7-2012",
-                "31-7-2010",
-                "25-01-2009",
-                "30-11-2007",
-                "31-5-2003",
-                "15-1-2001",
-
-            };
-  */
             string[] companies = new string[] {
                 "Lachen, Gieren, Brullen Entertainment",
                 "De Wolven van Wallstreet",

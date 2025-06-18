@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CrossCuttingConcerns.Validation;
-using Microsoft.AspNetCore.Http.Features;
 using TalentDataAccess.DataAccess.DataAccessObjects;
 using TalentLogic.Logic.BusinessObjects;
 
