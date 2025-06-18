@@ -1,13 +1,4 @@
-﻿using Azure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using TalentDataAccess.DataAccess.DataAccessObjects;
-using static Azure.Core.HttpHeader;
-using static System.Net.Mime.MediaTypeNames;
+﻿using TalentDataAccess.DataAccess.DataAccessObjects;
 
 namespace TalentDataAccess.DataAccess.ExampleData
 {
@@ -108,22 +99,22 @@ namespace TalentDataAccess.DataAccess.ExampleData
             //    "Teamplayer, Sociaal, vriendelijk, Kennis delend, Doorzetter",
             //};
 
-            DateTime[] dob = new DateTime[]
+            DateOnly[] dob = new DateOnly[]
             {
-                new DateTime(1955, 1, 6),
-                new DateTime(1974, 1, 30),
-                new DateTime(1989, 5, 29),
-                new DateTime(1988, 3, 21),
-                new DateTime(1987, 9, 30),
-                new DateTime(1990, 8, 31),
-                new DateTime(1991, 7, 30),
-                new DateTime(1972, 6, 12),
-                new DateTime(1994, 5, 2),
-                new DateTime(1992, 12, 1),
-                new DateTime(1960, 4, 12),
-                new DateTime(1986, 11, 22),
-                new DateTime(1988, 4, 27),
-                new DateTime(1960, 3, 17)
+                new DateOnly(1955, 1, 6),
+                new DateOnly(1974, 1, 30),
+                new DateOnly(1989, 5, 29),
+                new DateOnly(1988, 3, 21),
+                new DateOnly(1987, 9, 30),
+                new DateOnly(1990, 8, 31),
+                new DateOnly(1991, 7, 30),
+                new DateOnly(1972, 6, 12),
+                new DateOnly(1994, 5, 2),
+                new DateOnly(1992, 12, 1),
+                new DateOnly(1960, 4, 12),
+                new DateOnly(1986, 11, 22),
+                new DateOnly(1988, 4, 27),
+                new DateOnly(1960, 3, 17)
             };
 
             string[] municipalities = new string[]

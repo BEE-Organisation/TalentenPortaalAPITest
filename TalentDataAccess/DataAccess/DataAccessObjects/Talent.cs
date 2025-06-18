@@ -20,7 +20,7 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         public string Surname { get; set; } = string.Empty;
         public string NamePrefix { get; set; } = string.Empty;
         [Required]
-        public DateTime DateOfBirth { get; set; }
+        public DateOnly DateOfBirth { get; set; }
         #endregion
 
         #region Adress
@@ -60,7 +60,7 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         //Karakterschets => to Properties.
         //[Required]
         //public string CharacterTraits { get; set; } = string.Empty;
-
+//        public DateOnly DateOfBirth { get; set; }
 
         //Education as Denkniveau
         public string Education { get; set; } = string.Empty;
