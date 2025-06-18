@@ -19,6 +19,11 @@ namespace TalentDataAccess.Migrations
             ");
 
             migrationBuilder.Sql(@"
+            UPDATE ""TalentenPortaal"".""PastExperience""
+            SET ""DateTill"" = NULL;
+            ");
+
+            migrationBuilder.Sql(@"
             ALTER TABLE ""TalentenPortaal"".""PastExperience""
             ALTER COLUMN ""DateTill"" TYPE date
             USING (NULLIF(TRIM(""DateTill""), '')::date);
@@ -28,19 +33,29 @@ namespace TalentDataAccess.Migrations
             ALTER TABLE ""TalentenPortaal"".""PastExperience""
             ALTER COLUMN ""DateFrom"" DROP NOT NULL;
             ");
-            
+
+            migrationBuilder.Sql(@"
+            UPDATE ""TalentenPortaal"".""PastExperience""
+            SET ""DateFrom"" = NULL;
+            ");
+
             migrationBuilder.Sql(@"
             ALTER TABLE ""TalentenPortaal"".""PastExperience""
             ALTER COLUMN ""DateFrom"" TYPE date
             USING (NULLIF(TRIM(""DateFrom""), '')::date);
             ");
-                  
+
             migrationBuilder.Sql(@"
             ALTER TABLE ""TalentenPortaal"".""EducationDetail""
             ALTER COLUMN ""DateTill"" DROP NOT NULL;
             ");
 
             migrationBuilder.Sql(@"
+            UPDATE ""TalentenPortaal"".""EducationDetail""
+            SET ""DateTill"" = NULL;
+            ");
+
+            migrationBuilder.Sql(@"
             ALTER TABLE ""TalentenPortaal"".""EducationDetail""
             ALTER COLUMN ""DateTill"" TYPE date
             USING (NULLIF(TRIM(""DateTill""), '')::date);
@@ -50,7 +65,12 @@ namespace TalentDataAccess.Migrations
             ALTER TABLE ""TalentenPortaal"".""EducationDetail""
             ALTER COLUMN ""DateFrom"" DROP NOT NULL;
             ");
-            
+
+            migrationBuilder.Sql(@"
+            UPDATE ""TalentenPortaal"".""EducationDetail""
+            SET ""DateFrom"" = NULL;
+            ");
+
             migrationBuilder.Sql(@"
             ALTER TABLE ""TalentenPortaal"".""EducationDetail""
             ALTER COLUMN ""DateFrom"" TYPE date

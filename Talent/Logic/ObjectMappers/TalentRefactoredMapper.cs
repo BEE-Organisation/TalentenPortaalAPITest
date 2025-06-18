@@ -22,7 +22,6 @@ namespace TalentLogic.Logic.ObjectMappers
 
             bo.Name = model.Name;
             bo.Initials = model.Initials;
-            bo.GivenName = model.GivenName; 
             bo.Surname = model.Surname; 
             bo.NamePrefix = model.NamePrefix;
             bo.DateOfBirth = model.DateOfBirth.ToString("dd-MM-yyyy");
@@ -102,7 +101,6 @@ namespace TalentLogic.Logic.ObjectMappers
 
             model.Name = bo.Name;
             model.Initials = bo.Initials;
-            model.GivenName = bo.GivenName;
             model.Surname = bo.Surname;
             model.NamePrefix = bo.NamePrefix;
 //            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
