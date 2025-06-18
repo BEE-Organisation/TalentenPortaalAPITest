@@ -17,8 +17,6 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         [Required]
         public string Initials { get; set; } = string.Empty; 
         [Required]
-        public string GivenName { get; set; } = string.Empty;
-        [Required]
         public string Surname { get; set; } = string.Empty;
         public string NamePrefix { get; set; } = string.Empty;
         [Required]
