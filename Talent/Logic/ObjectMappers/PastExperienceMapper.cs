@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CrossCuttingConcerns.Validation;
 using TalentDataAccess.DataAccess.DataAccessObjects;
 using TalentLogic.Logic.BusinessObjects;
 
@@ -19,8 +17,8 @@ namespace TalentLogic.Logic.ObjectMappers
             {
                 BOPastExperience bo = new BOPastExperience();
                 bo.Id = model.Id;
-                bo.DateFrom = model.DateFrom;
-                bo.DateTill = model.DateTill;
+                bo.DateFrom = model.DateFrom.HasValue ? model.DateFrom.Value.ToString("dd-MM-yyyy") : string.Empty;
+                bo.DateTill = model.DateTill.HasValue ? model.DateTill.Value.ToString("dd-MM-yyyy") : string.Empty;
                 bo.Company = model.Company;
                 bo.Function = model.Function;
                 bo.Tasks = model.Tasks;
@@ -45,8 +43,21 @@ namespace TalentLogic.Logic.ObjectMappers
                     model.Id = businessObject.Id ?? 0;
                 }
 
-                model.DateFrom = businessObject.DateFrom;
-                model.DateTill = businessObject.DateTill;
+                DateOnly? dateFrom = string.IsNullOrEmpty(businessObject.DateFrom)
+                    ? null
+                    : DateOnly.FromDateTime(DateTime.ParseExact(businessObject.DateFrom, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
+                model.DateFrom = dateFrom;
+
+                DateOnly? dateTill = string.IsNullOrEmpty(businessObject.DateTill)
+                    ? null
+                    : DateOnly.FromDateTime(DateTime.ParseExact(businessObject.DateTill, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
+                model.DateTill = dateTill;
+
+                if (dateFrom.HasValue && !ChronologyValidator.IsValidChronology(dateFrom.Value, dateTill))
+                {
+                    throw new ArgumentException($"EducationDetail: DateFrom ({dateFrom}) must be before or equal to DateTill ({dateTill}).");
+                }
+
                 model.Company = businessObject.Company;
                 model.Function = businessObject.Function;
                 model.Tasks = businessObject.Tasks;

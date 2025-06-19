@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TalentDataAccess.DataAccess;
@@ -12,9 +13,11 @@ using TalentDataAccess.DataAccess;
 namespace TalentDataAccess.Migrations
 {
     [DbContext(typeof(TalentDbContext))]
-    partial class TalentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250603134025_UpdateDateFromTillToDateOnly")]
+    partial class UpdateDateFromTillToDateOnly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -527,245 +530,245 @@ namespace TalentDataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Auto’s restaureren",
+                            Name = "Zeefdrukken maken",
                             Order = 0,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Kaarsen maken",
+                            Name = "Grafisch ontwerpen",
                             Order = 1,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Modelbouw",
+                            Name = "Websites bouwen",
                             Order = 2,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Computers bouwen",
+                            Name = "Sieraden maken",
                             Order = 3,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Papier-maché",
+                            Name = "Padellen",
                             Order = 4,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Vogelspotten",
+                            Name = "Lezen",
                             Order = 0,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 7,
-                            Name = "Puzzelen",
+                            Name = "Cocktails maken",
                             Order = 1,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 8,
-                            Name = "Programmeren",
+                            Name = "Tekenen",
                             Order = 2,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 9,
-                            Name = "Apps ontwikkelen",
+                            Name = "Acteren",
                             Order = 3,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 10,
-                            Name = "Plantjes kweken",
+                            Name = "Beeldhouwen",
                             Order = 4,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Kaarsen maken",
+                            Name = "Lezen",
                             Order = 0,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 12,
-                            Name = "Surfen",
+                            Name = "Padellen",
                             Order = 1,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 13,
-                            Name = "Volleybal",
+                            Name = "Apps ontwikkelen",
                             Order = 2,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 14,
-                            Name = "Schaken",
+                            Name = "Zeefdrukken maken",
                             Order = 3,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 15,
-                            Name = "Photoshoppen",
+                            Name = "Websites bouwen",
                             Order = 4,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 16,
-                            Name = "Robots bouwen",
+                            Name = "Doe-het-zelven",
                             Order = 0,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 17,
-                            Name = "Websites bouwen",
+                            Name = "Zeefdrukken maken",
                             Order = 1,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 18,
-                            Name = "Programmeren",
+                            Name = "Robots bouwen",
                             Order = 2,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 19,
-                            Name = "Kleding maken",
+                            Name = "Zingen",
                             Order = 3,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 20,
-                            Name = "Scrapbooking",
+                            Name = "Volleybal",
                             Order = 4,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 21,
-                            Name = "Een podcast maken",
+                            Name = "Apps ontwikkelen",
                             Order = 0,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 22,
-                            Name = "3D-printen",
+                            Name = "Puzzelen",
                             Order = 1,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 23,
-                            Name = "Beeldhouwen",
+                            Name = "Een instrument spelen",
                             Order = 2,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 24,
-                            Name = "Puzzelen",
+                            Name = "Films kijken",
                             Order = 3,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 25,
-                            Name = "Yoga",
+                            Name = "Je eigen bier brouwen",
                             Order = 4,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 26,
-                            Name = "Pottenbakken",
+                            Name = "Kleding maken",
                             Order = 0,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 27,
-                            Name = "Mozaïek",
+                            Name = "Taarten bakken",
                             Order = 1,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 28,
-                            Name = "Cocktails maken",
+                            Name = "Video’s bewerken (TikTokken!)",
                             Order = 2,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 29,
-                            Name = "Schrijven",
+                            Name = "Tekenen",
                             Order = 3,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 30,
-                            Name = "Surfen",
+                            Name = "Borduren",
                             Order = 4,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 31,
-                            Name = "Websites bouwen",
+                            Name = "Tennis",
                             Order = 0,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 32,
-                            Name = "Films kijken",
+                            Name = "Dansen",
                             Order = 1,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 33,
-                            Name = "Een taal leren",
+                            Name = "Cocktails maken",
                             Order = 2,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 34,
-                            Name = "Schrijven",
+                            Name = "Je eigen bier brouwen",
                             Order = 3,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 35,
-                            Name = "Scrapbooking",
+                            Name = "Houtbewerken",
                             Order = 4,
                             TalentId = 7
                         },
@@ -1512,6 +1515,10 @@ namespace TalentDataAccess.Migrations
                     b.Property<bool>("FoundJob")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("GivenName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("HouseNumber")
                         .IsRequired()
                         .HasColumnType("text");
@@ -1609,6 +1616,7 @@ namespace TalentDataAccess.Migrations
                             Education = "WO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1642,6 +1650,7 @@ namespace TalentDataAccess.Migrations
                             Education = "HBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1675,6 +1684,7 @@ namespace TalentDataAccess.Migrations
                             Education = "MBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1708,6 +1718,7 @@ namespace TalentDataAccess.Migrations
                             Education = "MBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1741,6 +1752,7 @@ namespace TalentDataAccess.Migrations
                             Education = "MBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1774,6 +1786,7 @@ namespace TalentDataAccess.Migrations
                             Education = "MBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1807,6 +1820,7 @@ namespace TalentDataAccess.Migrations
                             Education = "MBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1840,6 +1854,7 @@ namespace TalentDataAccess.Migrations
                             Education = "HBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1873,6 +1888,7 @@ namespace TalentDataAccess.Migrations
                             Education = "WO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1906,6 +1922,7 @@ namespace TalentDataAccess.Migrations
                             Education = "MBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1939,6 +1956,7 @@ namespace TalentDataAccess.Migrations
                             Education = "WO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -1972,6 +1990,7 @@ namespace TalentDataAccess.Migrations
                             Education = "HBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -2005,6 +2024,7 @@ namespace TalentDataAccess.Migrations
                             Education = "HBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
@@ -2038,6 +2058,7 @@ namespace TalentDataAccess.Migrations
                             Education = "HBO",
                             Email = "",
                             FoundJob = false,
+                            GivenName = "",
                             HouseNumber = "",
                             HouseNumberSuffix = "",
                             Initials = "",
