@@ -53,7 +53,7 @@ namespace TalentLogic.Logic.ObjectMappers
                 model.TalentPropertyLabelId = item.TalentPropertyLabelId ?? 0;
                 model.SkillLevel = item.SkillLevel;
                 model.Order = item.Order;
-
+                model.SkillTypeId = item.SkillTypeId;
 
                 collection.Add(model);
             }
@@ -75,6 +75,8 @@ namespace TalentLogic.Logic.ObjectMappers
                 bo.SkillLevel = item.SkillLevel;
                 bo.Order = item.Order;
                 bo.MainCategoryId = item.TalentPropertyMainCategoryLink.Id;
+                bo.SkillTypeId = item.SkillTypeId;
+                bo.SkillTypeName = item.SkillType.Name;
 
                 list.Add(bo);
             }

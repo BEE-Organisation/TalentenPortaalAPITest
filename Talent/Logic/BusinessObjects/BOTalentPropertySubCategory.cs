@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TalentDataAccess.DataAccess.DataAccessObjects;
 
 namespace TalentLogic.Logic.BusinessObjects
 {
@@ -17,6 +18,8 @@ namespace TalentLogic.Logic.BusinessObjects
         public int SkillLevel { get; set; }
         public int Order { get; set; }
         public int? MainCategoryId { get; set; }
+        public int SkillTypeId { get; set; }
+        public string SkillTypeName { get; set; }
 
     }
 }
