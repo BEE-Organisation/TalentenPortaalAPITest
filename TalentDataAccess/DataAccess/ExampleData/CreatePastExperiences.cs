@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using TalentDataAccess.DataAccess.DataAccessObjects;
 
 namespace TalentDataAccess.DataAccess.ExampleData
@@ -10,93 +6,92 @@ namespace TalentDataAccess.DataAccess.ExampleData
     public class CreatePastExperiences
     {
 
-        public static List<PastExperience> Create() 
+        public static List<PastExperience> Create()
         {
             List<PastExperience> list = new List<PastExperience>();
 
-            string[] from = new string[] {
-                "januari 1990",
-                "januari 2000",
-                "maart 2022",
-                "mei 2020",
-                "juni 2019",
-                "02/2019",
-                "10-2018",
-                "03-2023",
-                "12-2021",
-                "09-2021",
-                "08-2001",
-                "01-2020",
-                "04-2018",
-                "07-2016",
-                "03-2014",
-                "08-2023",
-                "01-2023",
-                "10-2021",
-                "03-2023",
-                "11-2010",
-                "1-2005",
-                "10-2003",
-                "03-2023",
-                "2-2020",
-                "09-2010",
-                "13/7/2023",
-                "12/3/2020",
-                "5/7/2010",
-                "1/3/2023",
-                "1-5-2022",
-                "1-5-2013",
-                "1-8-2012",
-                "1-8-2010",
-                "26-1-2009",
-                "1-12-2007",
-                "1-6-2003",
-                "16-1-2001",
-                "1-5-1998",
-
+            DateOnly[] from = new DateOnly[] {
+                new DateOnly(1990, 1, 15),
+                new DateOnly(2000, 1, 10),
+                new DateOnly(2018, 3, 5),
+                new DateOnly(2017, 5, 20),
+                new DateOnly(2016, 6, 8),
+                new DateOnly(2015, 2, 12),
+                new DateOnly(2014, 10, 3),
+                new DateOnly(2018, 3, 18),
+                new DateOnly(2017, 12, 7),
+                new DateOnly(2017, 9, 22),
+                new DateOnly(2001, 8, 14),
+                new DateOnly(2016, 1, 9),
+                new DateOnly(2015, 4, 25),
+                new DateOnly(2014, 7, 2),
+                new DateOnly(2013, 3, 11),
+                new DateOnly(2018, 8, 6),
+                new DateOnly(2018, 1, 17),
+                new DateOnly(2017, 10, 28),
+                new DateOnly(2018, 3, 13),
+                new DateOnly(2010, 11, 19),
+                new DateOnly(2005, 1, 4),
+                new DateOnly(2003, 10, 23),
+                new DateOnly(2018, 3, 2),
+                new DateOnly(2017, 2, 15),
+                new DateOnly(2010, 9, 30),
+                new DateOnly(2018, 7, 13),
+                new DateOnly(2017, 3, 12),
+                new DateOnly(2010, 7, 5),
+                new DateOnly(2018, 3, 1),
+                new DateOnly(2017, 5, 1),
+                new DateOnly(2013, 5, 1),
+                new DateOnly(2012, 8, 1),
+                new DateOnly(2010, 8, 1),
+                new DateOnly(2009, 1, 26),
+                new DateOnly(2007, 10, 1),
+                new DateOnly(2003, 6, 1),
+                new DateOnly(2001, 1, 16),
+                new DateOnly(1998, 5, 1),
             };
 
-            string[] to = new string[] {
-               "december 1998",
-               "november 2021",
-               "januari 2023",
-               "maart 2023",
-               "juli 2020",
-               "09/2019",
-               "10-2019",
-               "Heden",
-                "02-2023",
-                "11-2021",
-                "08-2018",
-                "Heden",
-                "12-2018",
-                "09-2016",
-                "08-2015",
-                "Heden",
-                "06-2023",
-                "05-2022",
-                "Heden",
-                "1-2022",
-                "10-2010",
-                "12-2004",
-                "Heden",
-                "10-2022",
-                "01-2011",
-                "Heden",
-                "12/7/2023",
-                "27/8/2010",
-                "30/9/2023",
-                "30/11/2022",
-                "31-3-2022",
-                "30-4-2013",
-                "31-7-2012",
-                "31-7-2010",
-                "25-01-2009",
-                "30-11-2007",
-                "31-5-2003",
-                "15-1-2001",
-
+            DateOnly[] to = new DateOnly[] {
+                new DateOnly(1998, 12, 1),
+                new DateOnly(2021, 11, 1),
+                new DateOnly(2023, 1, 6),
+                new DateOnly(2023, 3, 21),
+                new DateOnly(2020, 7, 9),
+                new DateOnly(2019, 9, 13),
+                new DateOnly(2019, 10, 4),
+                new DateOnly(2024, 1, 1),
+                new DateOnly(2023, 2, 8),
+                new DateOnly(2021, 11, 23),
+                new DateOnly(2018, 8, 15),
+                new DateOnly(2024, 1, 1),
+                new DateOnly(2018, 12, 13),
+                new DateOnly(2016, 9, 3),
+                new DateOnly(2015, 8, 7),
+                new DateOnly(2024, 1, 1),
+                new DateOnly(2023, 6, 18),
+                new DateOnly(2022, 5, 29),
+                new DateOnly(2024, 1, 1),
+                new DateOnly(2022, 1, 20),
+                new DateOnly(2010, 10, 5),
+                new DateOnly(2004, 12, 24),
+                new DateOnly(2024, 1, 1),
+                new DateOnly(2022, 10, 16),
+                new DateOnly(2011, 1, 31),
+                new DateOnly(2024, 1, 1),
+                new DateOnly(2023, 7, 13),
+                new DateOnly(2010, 8, 28),
+                new DateOnly(2023, 9, 30),
+                new DateOnly(2022, 11, 30),
+                new DateOnly(2022, 3, 31),
+                new DateOnly(2013, 4, 30),
+                new DateOnly(2012, 7, 31),
+                new DateOnly(2010, 7, 31),
+                new DateOnly(2009, 1, 27),
+                new DateOnly(2007, 11, 30),
+                new DateOnly(2003, 5, 31),
+                new DateOnly(2001, 1, 17),
             };
+
 
             string[] companies = new string[] {
                 "Lachen, Gieren, Brullen Entertainment",
@@ -163,7 +158,7 @@ namespace TalentDataAccess.DataAccess.ExampleData
                 "Fullstack developer",      //John = 11 -> 4x
                 "Fullstack developer",
                 "Fullstack developer",
-                "Software developer", 
+                "Software developer",
                 "Fullstack Developer",       //Peter = 12 ->  3x
                 "IT Medewerker",
                 "Stagiair",
@@ -181,7 +176,7 @@ namespace TalentDataAccess.DataAccess.ExampleData
                 "Senior Software Engineer",
                 "Senior Software Engineer",
 
-                
+
 
             };
 
@@ -246,7 +241,7 @@ namespace TalentDataAccess.DataAccess.ExampleData
                 new List<string>() { "Mensen te woord staan om ze wegwijs te maken in de wereld van de energie","Technische ondersteuning bieden","Administratief alles op orde maken","Hulp en oplossingen bieden bij betalingsachterstanden" },
                 new List<string>() { "Programmeren in de frontend van de applicatie.","Uitvoeren van scrum gerelateerde taken." },
                 new List<string>() { "Programmeren in de frontend van de applicatie.","Ondersteuning van andere teamleden ineen adviserende rol.","Contactpersoon tussen verschillendestakeholders.","Deelname aan planningstaken enwerkitems binnen het scrum-framework.","Presenteren en geven van demo's vanfuncties in de applicatie aan zowel deinterne teams als externe klanten.","Zoeken naar nieuwe oplossingen en bestpractices-scenario's om de kwaliteit vanhet product te verbeteren." },
-                new List<string>(),                
+                new List<string>(),
                 new List<string>() { "Deelname aan het ontwerp en destructurering van het project.","Programmeren in de backend en front-end van de applicatie.","Testen, debuggen en zoeken naaroplossingen voor problemen binnen hetproject.","Ondersteuning van andere teamleden ineen adviserende rol.","Deelname aan planningstaken enwerkitems binnen het scrum-framework.","Zoeken naar nieuwe oplossingen en bestpractices-scenario's om de kwaliteit vanhet product te verbeteren." },
                 new List<string>() { "Maken en ontwikkeling vanbedrijfskritische verzuimsoftwarevoornamelijk voor arbodiensten maar ookvoor bedrijfsartsen en werkgevers.", "Betrokkenheid bij ISO certificatie.", "Waar ik trots op ben, CBBS.", "Een systeem waar:", "A. Beroepen met functies en takenworden gekoppeld aan de fysieke enpsychische belasting.", "B. De taken bij het beroep per belastingeen kleur van de stoplicht krijgen, rood isnoodzakelijk en groen is niet vantoepassing.", "C. Ziektes.gekoppeld worden aan defysieke en psychische belasting. (Taken)", "D. Met een druk op een knop bepaaldwordt of bijvoorbeeld iemand met eengebroken voet nog zijn beroep, taken kanuitvoeren", "Het mooie van het systeem is dat erfuncties groen kunnen zijn. Dat betekenddat de werknemers vaak deels nog aanhet werk kunnen." },
                 new List<string>(),
@@ -269,7 +264,7 @@ namespace TalentDataAccess.DataAccess.ExampleData
                 new List<string>(),
 
             };
-                        
+
             int[] talentIds = new int[] {
                 1,
                 2,

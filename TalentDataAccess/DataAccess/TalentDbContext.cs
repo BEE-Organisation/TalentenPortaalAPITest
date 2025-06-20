@@ -13,6 +13,7 @@ namespace TalentDataAccess.DataAccess
         public DbSet<TalentPropertyLabel> TalentPropertyLabels { get; set; }
         public DbSet<TalentPropertyMainCategoryLink> TalentPropertyMainCategoryLinks { get; set; }        
         public DbSet<TalentPropertySubCategoryLink> TalentPropertySubCategoryLinks { get; set; }
+        public DbSet<SkillType> SkillTypes { get; set; }
         public DbSet<Organization> Organizations { get; set; }
 
         public DbSet<Company> Companies { get; set; }
@@ -41,6 +42,13 @@ namespace TalentDataAccess.DataAccess
             modelBuilder.Entity<TalentPropertyLabel>()
                 .HasIndex(x => x.Name)
                 .IsUnique();
+
+            modelBuilder.Entity<TalentPropertySubCategoryLink>()
+                .HasOne(x => x.SkillType)
+                .WithMany(x => x.TalentPropertySubCategoryLinks) 
+                .HasForeignKey(x => x.SkillTypeId)
+                .OnDelete(DeleteBehavior.Restrict); 
+
 
             //Create example data.            
             modelBuilder.Entity<EducationDetail>().HasData(

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TalentDataAccess.DataAccess.DataAccessObjects;
 using TalentLogic.Logic.BusinessObjects;
+using CrossCuttingConcerns.Validation;
+
 
 namespace TalentLogic.Logic.ObjectMappers
 {
@@ -18,8 +17,8 @@ namespace TalentLogic.Logic.ObjectMappers
             foreach (var item in items)
             {
                 BOEducationDetail bo = new BOEducationDetail();
-                bo.DateFrom = item.DateFrom;
-                bo.DateTill = item.DateTill;
+                bo.DateFrom = item.DateFrom.HasValue ? item.DateFrom.Value.ToString("dd-MM-yyyy") : string.Empty;
+                bo.DateTill = item.DateTill.HasValue ? item.DateTill.Value.ToString("dd-MM-yyyy") : string.Empty;
                 bo.Name = item.Name;
                 bo.Institution = item.Institution;
                 bo.Comments = item.Comments;
@@ -37,8 +36,23 @@ namespace TalentLogic.Logic.ObjectMappers
             foreach (var item in items)
             {
                 EducationDetail model = new EducationDetail();
-                model.DateFrom = item.DateFrom;
-                model.DateTill = item.DateTill;
+                
+                DateOnly? dateFrom = string.IsNullOrEmpty(item.DateFrom)
+                ? null 
+                : DateOnly.FromDateTime(DateTime.ParseExact(item.DateFrom, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
+                                
+                DateOnly? dateTill = string.IsNullOrEmpty(item.DateTill)
+                ? null 
+                : DateOnly.FromDateTime(DateTime.ParseExact(item.DateTill, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
+
+
+                if (dateFrom.HasValue && !ChronologyValidator.IsValidChronology(dateFrom.Value, dateTill))
+                {
+                    throw new ArgumentException($"EducationDetail: DateFrom ({dateFrom}) must be before or equal to DateTill ({dateTill}).");
+                }
+
+                model.DateFrom = dateFrom;
+                model.DateTill = dateTill;
                 model.Name = item.Name;
                 model.Institution = item.Institution;
                 model.Comments = item.Comments;
@@ -46,7 +60,7 @@ namespace TalentLogic.Logic.ObjectMappers
 
                 list.Add(model);
             }
-
+            
             return list;
         }
 

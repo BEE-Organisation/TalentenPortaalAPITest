@@ -13,6 +13,7 @@ namespace TalentLogic.Logic.ObjectMappers
 
         public static BOTalentRefactored Map(Talent model)
         {
+            //From entity to BO
             BOTalentRefactored bo = new BOTalentRefactored();
 
             bo.Id = model.Id;
@@ -21,10 +22,9 @@ namespace TalentLogic.Logic.ObjectMappers
 
             bo.Name = model.Name;
             bo.Initials = model.Initials;
-            bo.GivenName = model.GivenName; 
             bo.Surname = model.Surname; 
             bo.NamePrefix = model.NamePrefix;
-            bo.DateOfBirth = model.DateOfBirth.ToString();
+            bo.DateOfBirth = model.DateOfBirth.ToString("dd-MM-yyyy");
 
             #endregion
 
@@ -89,6 +89,7 @@ namespace TalentLogic.Logic.ObjectMappers
 
         public static Talent Map(BOTalentRefactored bo)
         {
+            //From BO to entity
             Talent model = new Talent();
 
             if(bo.Id != null)
@@ -100,10 +101,9 @@ namespace TalentLogic.Logic.ObjectMappers
 
             model.Name = bo.Name;
             model.Initials = bo.Initials;
-            model.GivenName = bo.GivenName;
             model.Surname = bo.Surname;
             model.NamePrefix = bo.NamePrefix;
-            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
+//            model.DateOfBirth = DateTime.Parse(bo.DateOfBirth);
 
             #endregion
 
@@ -157,7 +157,8 @@ namespace TalentLogic.Logic.ObjectMappers
 
             model.JobTitle = bo.JobTitle;
             model.Description = bo.Description;
-
+            var dateOfBirth = DateOnly.FromDateTime(DateTime.ParseExact(bo.DateOfBirth, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
+            model.DateOfBirth = dateOfBirth;
             model.Education = bo.Education;
             model.TravelDistance = bo.TravelDistance;
             model.DesiredWorkLocation = bo.DesiredWorkLocation;

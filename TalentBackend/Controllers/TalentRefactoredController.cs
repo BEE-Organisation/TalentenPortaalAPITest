@@ -27,7 +27,7 @@ namespace TalentBackend.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             try
-            {
+                {
                 var record = await _talentRefactoredCrud.GetById(id);
                 return Ok(record);
             }
