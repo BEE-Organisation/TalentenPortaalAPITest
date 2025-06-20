@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TalentDataAccess.DataAccess;
@@ -12,9 +13,11 @@ using TalentDataAccess.DataAccess;
 namespace TalentDataAccess.Migrations
 {
     [DbContext(typeof(TalentDbContext))]
-    partial class TalentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250616091919_RemoveGivenNameTalen")]
+    partial class RemoveGivenNameTalen
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,11 +100,13 @@ namespace TalentDataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateOnly?>("DateFrom")
-                        .HasColumnType("date");
+                    b.Property<string>("DateFrom")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<DateOnly?>("DateTill")
-                        .HasColumnType("date");
+                    b.Property<string>("DateTill")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Institution")
                         .IsRequired()
@@ -125,8 +130,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 1,
                             Comments = "De opleiding duurde lang door de vele ongelukken.",
-                            DateFrom = new DateOnly(1980, 9, 1),
-                            DateTill = new DateOnly(1988, 7, 1),
+                            DateFrom = "Sept. 1980",
+                            DateTill = "Juli 1988",
                             Institution = "Britse Beeldbuis Club (BBC)",
                             Name = "Acteuropleiding",
                             TalentId = 1
@@ -135,8 +140,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 2,
                             Comments = "",
-                            DateFrom = new DateOnly(1995, 1, 1),
-                            DateTill = new DateOnly(1999, 12, 1),
+                            DateFrom = "Januari 1995",
+                            DateTill = "December 1999",
                             Institution = "Nyenrode Business University",
                             Name = "Master Business Adminstration (MBA)",
                             TalentId = 2
@@ -145,8 +150,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 3,
                             Comments = "",
-                            DateFrom = new DateOnly(2019, 3, 1),
-                            DateTill = new DateOnly(2019, 9, 1),
+                            DateFrom = "03/2019",
+                            DateTill = "09/2019",
                             Institution = "LOI",
                             Name = "Redacteren kun je leren",
                             TalentId = 3
@@ -155,8 +160,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 4,
                             Comments = "Certificaat niet behaald.",
-                            DateFrom = new DateOnly(2016, 9, 1),
-                            DateTill = new DateOnly(2017, 3, 1),
+                            DateFrom = "09/2016",
+                            DateTill = "03/2017",
                             Institution = "Oranje licht? Dan gas geven!",
                             Name = "Taxidienst voor gevorderden",
                             TalentId = 5
@@ -165,8 +170,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 5,
                             Comments = "",
-                            DateFrom = new DateOnly(2012, 1, 1),
-                            DateTill = new DateOnly(2016, 12, 1),
+                            DateFrom = "01/2012",
+                            DateTill = "12/2016",
                             Institution = "HRO Rotterdam",
                             Name = "Office Management",
                             TalentId = 6
@@ -175,6 +180,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 6,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "HBO",
                             Name = "Software Development",
                             TalentId = 8
@@ -183,6 +190,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 7,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Vapro-C",
                             TalentId = 8
@@ -191,6 +200,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 8,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Vapro-B",
                             TalentId = 8
@@ -199,6 +210,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 9,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Scrum.org",
                             Name = "PSM1",
                             TalentId = 8
@@ -207,6 +220,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 10,
                             Comments = "(Bezig met)",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Scrum.org",
                             Name = "PSPO1",
                             TalentId = 8
@@ -215,6 +230,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 11,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "HBO",
                             Name = "Communicatie; International Event Music and Entertainment industrie",
                             TalentId = 9
@@ -223,6 +240,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 12,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "MBO",
                             Name = "Rock City Institute",
                             TalentId = 9
@@ -231,6 +250,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 13,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "MBO",
                             Name = "Juridisch Medewerker",
                             TalentId = 9
@@ -239,6 +260,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 14,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Scrum.org",
                             Name = "Professional Scrum Master I",
                             TalentId = 9
@@ -247,6 +270,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 15,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Wft Zorgverzekeringen 2019",
                             TalentId = 9
@@ -255,6 +280,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 16,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Wft Basis",
                             TalentId = 9
@@ -263,6 +290,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 17,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Volver Sound Academy",
                             TalentId = 9
@@ -271,6 +300,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 18,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Adecco CEO for One Month",
                             TalentId = 9
@@ -279,6 +310,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 19,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Ascensos Communicatie Training",
                             TalentId = 9
@@ -287,6 +320,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 20,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Trevianum Sittard",
                             Name = "HAVO",
                             TalentId = 10
@@ -295,6 +330,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 21,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Vista College Maastricht",
                             Name = "MBO 4 Applicatie en Mediaontwikkelaar",
                             TalentId = 10
@@ -303,6 +340,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 22,
                             Comments = "Work in Progress",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Scrum.org",
                             Name = "PSM1",
                             TalentId = 10
@@ -311,6 +350,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 23,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "LOI",
                             Name = "HBO Informatica",
                             TalentId = 11
@@ -319,6 +360,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 24,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Open Universiteit",
                             Name = "Milieukunde",
                             TalentId = 11
@@ -327,6 +370,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 25,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "HAVO",
                             TalentId = 11
@@ -335,6 +380,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 26,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Scrum.org",
                             Name = "Professional Scrum Master",
                             TalentId = 11
@@ -343,6 +390,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 27,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Developing ASP.NET MVC Web Applications",
                             TalentId = 11
@@ -351,6 +400,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 28,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Angular Development",
                             TalentId = 11
@@ -359,6 +410,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 29,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Programming in HTML 5 with Javascript and CSS3",
                             TalentId = 11
@@ -367,6 +420,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 30,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Microsoft DEV204.1x Introduction to C#",
                             TalentId = 11
@@ -375,6 +430,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 31,
                             Comments = "Propedeuse",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "HBO",
                             Name = "Applied Science",
                             TalentId = 12
@@ -383,6 +440,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 32,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Scrum.org",
                             Name = "PSM1",
                             TalentId = 12
@@ -391,8 +450,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 33,
                             Comments = "",
-                            DateFrom = new DateOnly(2010, 1, 1),
-                            DateTill = new DateOnly(2020, 1, 1),
+                            DateFrom = "2010",
+                            DateTill = "2020",
                             Institution = "HBO",
                             Name = "Toegepaste Psychologie",
                             TalentId = 13
@@ -401,8 +460,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 34,
                             Comments = "",
-                            DateFrom = new DateOnly(2009, 1, 1),
-                            DateTill = new DateOnly(2010, 1, 1),
+                            DateFrom = "2009",
+                            DateTill = "2010",
                             Institution = "HBO",
                             Name = "Milieukunde",
                             TalentId = 13
@@ -411,8 +470,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 35,
                             Comments = "",
-                            DateFrom = new DateOnly(2007, 1, 1),
-                            DateTill = new DateOnly(2009, 1, 1),
+                            DateFrom = "2007",
+                            DateTill = "2009",
                             Institution = "HBO",
                             Name = "Informatica",
                             TalentId = 13
@@ -421,6 +480,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 36,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "",
                             Name = "Codeacademy C#",
                             TalentId = 13
@@ -429,6 +490,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 37,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "Scrum.org",
                             Name = "Professional Scrum Master 1",
                             TalentId = 13
@@ -437,6 +500,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 38,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "learncpp.com",
                             Name = "Learn C++",
                             TalentId = 13
@@ -445,6 +510,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 39,
                             Comments = "",
+                            DateFrom = "",
+                            DateTill = "",
                             Institution = "HBO",
                             Name = "HAN Leraren opleiding Wis-/Natuurkunde",
                             TalentId = 14
@@ -453,8 +520,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 40,
                             Comments = "",
-                            DateFrom = new DateOnly(2023, 1, 1),
-                            DateTill = new DateOnly(2023, 1, 1),
+                            DateFrom = "2023",
+                            DateTill = "2023",
                             Institution = "Bee-Ideas",
                             Name = "Capacity building inclusief PSM1 certificering",
                             TalentId = 14
@@ -463,8 +530,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 41,
                             Comments = "",
-                            DateFrom = new DateOnly(2023, 1, 1),
-                            DateTill = new DateOnly(2023, 1, 1),
+                            DateFrom = "2023",
+                            DateTill = "2023",
                             Institution = "",
                             Name = "Agile Scrum Foundation",
                             TalentId = 14
@@ -473,8 +540,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 42,
                             Comments = "",
-                            DateFrom = new DateOnly(1985, 1, 1),
-                            DateTill = new DateOnly(2020, 1, 1),
+                            DateFrom = "1985",
+                            DateTill = "2020",
                             Institution = "",
                             Name = "Diverse programmeertalen en operating systemen",
                             TalentId = 14
@@ -483,8 +550,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 43,
                             Comments = "",
-                            DateFrom = new DateOnly(2002, 1, 1),
-                            DateTill = new DateOnly(2002, 1, 1),
+                            DateFrom = "2002",
+                            DateTill = "2002",
                             Institution = "",
                             Name = "Teamleider",
                             TalentId = 14
@@ -493,8 +560,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 44,
                             Comments = "",
-                            DateFrom = new DateOnly(1998, 1, 1),
-                            DateTill = new DateOnly(1998, 1, 1),
+                            DateFrom = "1998",
+                            DateTill = "1998",
                             Institution = "",
                             Name = "Effectief communiceren",
                             TalentId = 14
@@ -527,175 +594,175 @@ namespace TalentDataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Gamen",
+                            Name = "Papier-maché",
                             Order = 0,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Houtbewerken",
+                            Name = "Netflixen",
                             Order = 1,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Je eigen bier brouwen",
+                            Name = "Modelbouw",
                             Order = 2,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Sieraden maken",
+                            Name = "Dansen",
                             Order = 3,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Podcast maken",
+                            Name = "Bootcamp",
                             Order = 4,
                             TalentId = 1
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Drones bouwen/besturen",
+                            Name = "Zeefdrukken maken",
                             Order = 0,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 7,
-                            Name = "Naaien of quilten",
+                            Name = "Koken",
                             Order = 1,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 8,
-                            Name = "Houtbewerken",
+                            Name = "Websites bouwen",
                             Order = 2,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 9,
-                            Name = "Basketbal",
+                            Name = "Pottenbakken",
                             Order = 3,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 10,
-                            Name = "Borduren",
+                            Name = "Tuinieren",
                             Order = 4,
                             TalentId = 2
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Computers bouwen",
+                            Name = "Sieraden maken",
                             Order = 0,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 12,
-                            Name = "Papier-maché",
+                            Name = "Muziek luisteren",
                             Order = 1,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 13,
-                            Name = "Tekenen",
+                            Name = "Auto’s restaureren",
                             Order = 2,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 14,
-                            Name = "Sleutelen aan fietsen",
+                            Name = "3D-printen",
                             Order = 3,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 15,
-                            Name = "Koken",
+                            Name = "Kaarten maken",
                             Order = 4,
                             TalentId = 3
                         },
                         new
                         {
                             Id = 16,
-                            Name = "Basketbal",
+                            Name = "Zeefdrukken maken",
                             Order = 0,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 17,
-                            Name = "Acteren",
+                            Name = "Kalligrafie",
                             Order = 1,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 18,
-                            Name = "Gamen",
+                            Name = "Een instrument spelen",
                             Order = 2,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 19,
-                            Name = "Schaken",
+                            Name = "Lezen",
                             Order = 3,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 20,
-                            Name = "Kalligrafie",
+                            Name = "Sterrenkijken",
                             Order = 4,
                             TalentId = 4
                         },
                         new
                         {
                             Id = 21,
-                            Name = "Mozaïek",
+                            Name = "Auto’s restaureren",
                             Order = 0,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 22,
-                            Name = "Hiken",
+                            Name = "Gamen",
                             Order = 1,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 23,
-                            Name = "Auto’s restaureren",
+                            Name = "Zeefdrukken maken",
                             Order = 2,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 24,
-                            Name = "Boksen",
+                            Name = "Schilderen",
                             Order = 3,
                             TalentId = 5
                         },
                         new
                         {
                             Id = 25,
-                            Name = "Puzzelen",
+                            Name = "Sieraden maken",
                             Order = 4,
                             TalentId = 5
                         },
@@ -709,63 +776,63 @@ namespace TalentDataAccess.Migrations
                         new
                         {
                             Id = 27,
-                            Name = "Glas-in-lood maken",
+                            Name = "Keramiek",
                             Order = 1,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 28,
-                            Name = "Computers bouwen",
+                            Name = "Zingen",
                             Order = 2,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 29,
-                            Name = "Basketbal",
+                            Name = "Schrijven",
                             Order = 3,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 30,
-                            Name = "Klimmen of boulderen",
+                            Name = "Puzzelen",
                             Order = 4,
                             TalentId = 6
                         },
                         new
                         {
                             Id = 31,
-                            Name = "Papier-maché",
+                            Name = "Kaarsen maken",
                             Order = 0,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 32,
-                            Name = "Sleutelen aan fietsen",
+                            Name = "Kleding maken",
                             Order = 1,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 33,
-                            Name = "Kalligrafie",
+                            Name = "Netflixen",
                             Order = 2,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 34,
-                            Name = "Plantjes kweken",
+                            Name = "Yoga",
                             Order = 3,
                             TalentId = 7
                         },
                         new
                         {
                             Id = 35,
-                            Name = "Tennis",
+                            Name = "Een radiozender beginnen",
                             Order = 4,
                             TalentId = 7
                         },
@@ -1019,11 +1086,13 @@ namespace TalentDataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateOnly?>("DateFrom")
-                        .HasColumnType("date");
+                    b.Property<string>("DateFrom")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<DateOnly?>("DateTill")
-                        .HasColumnType("date");
+                    b.Property<string>("DateTill")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -1051,8 +1120,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 1,
                             Company = "Lachen, Gieren, Brullen Entertainment",
-                            DateFrom = new DateOnly(1990, 1, 15),
-                            DateTill = new DateOnly(1998, 12, 1),
+                            DateFrom = "januari 1990",
+                            DateTill = "december 1998",
                             Description = "",
                             Function = "Kwaliteits-entertainer",
                             TalentId = 1,
@@ -1062,8 +1131,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 2,
                             Company = "De Wolven van Wallstreet",
-                            DateFrom = new DateOnly(2000, 1, 10),
-                            DateTill = new DateOnly(2021, 11, 1),
+                            DateFrom = "januari 2000",
+                            DateTill = "november 2021",
                             Description = "",
                             Function = "Leidinggevend Boekhouder",
                             TalentId = 2,
@@ -1073,8 +1142,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 3,
                             Company = "Drukkerij en Uitgeverij De inktvis.",
-                            DateFrom = new DateOnly(2018, 3, 5),
-                            DateTill = new DateOnly(2023, 1, 6),
+                            DateFrom = "maart 2022",
+                            DateTill = "januari 2023",
                             Description = "",
                             Function = "Redactrice",
                             TalentId = 3,
@@ -1084,8 +1153,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 4,
                             Company = "Bloempot BV",
-                            DateFrom = new DateOnly(2017, 5, 20),
-                            DateTill = new DateOnly(2023, 3, 21),
+                            DateFrom = "mei 2020",
+                            DateTill = "maart 2023",
                             Description = "",
                             Function = "Bloemenverkoopster",
                             TalentId = 4,
@@ -1095,8 +1164,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 5,
                             Company = "Taxidienst Quick",
-                            DateFrom = new DateOnly(2016, 6, 8),
-                            DateTill = new DateOnly(2020, 7, 9),
+                            DateFrom = "juni 2019",
+                            DateTill = "juli 2020",
                             Description = "",
                             Function = "Chauffeur",
                             TalentId = 5,
@@ -1106,8 +1175,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 6,
                             Company = "Mensen, potloden en stompies BV",
-                            DateFrom = new DateOnly(2015, 2, 12),
-                            DateTill = new DateOnly(2019, 9, 13),
+                            DateFrom = "02/2019",
+                            DateTill = "09/2019",
                             Description = "",
                             Function = "Administratief medewerker",
                             TalentId = 6,
@@ -1117,8 +1186,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 7,
                             Company = "De Dozenschuivers BV",
-                            DateFrom = new DateOnly(2014, 10, 3),
-                            DateTill = new DateOnly(2019, 10, 4),
+                            DateFrom = "10-2018",
+                            DateTill = "10-2019",
                             Description = "",
                             Function = "Cassière en winkelmedewerker",
                             TalentId = 7,
@@ -1128,8 +1197,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 8,
                             Company = "BEE-Ideas",
-                            DateFrom = new DateOnly(2018, 3, 18),
-                            DateTill = new DateOnly(2024, 1, 1),
+                            DateFrom = "03-2023",
+                            DateTill = "Heden",
                             Description = "In de rol van Product Owner vertaal ik de wensenvanuit de business naar werkbare items voor hetteam van ontwikkelaars. Oplossingen vanuit het teambespreek ik met de stakeholders en op deze manierverbind ik de stakeholders met het team vanontwikkelaars en wordt het beste product gemaaktvoor de stakeholder. Als Product Owner begeleid iktwee teams, met het eerste team wordt een nieuwCRM systeem gebouwd en met het tweede teamwordt er een NFT platform gebouwd. Als ScrumMaster heb ik voor een gestructureerde en openwerkomgeving gezorgd voor de ontwikkelaars. Ditheb ik gerealiseerd door regelmatig meetings tefaciliteren waarbij iedereen open, vrij en zonderrestricties kan communiceren. Om hier deel van tezijn en samen fijne, gebruikersvriendelijke productente maken geeft me elke dag veel voldoening.",
                             Function = "Product Owner/Scrum Master",
                             TalentId = 8,
@@ -1139,8 +1208,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 9,
                             Company = "Zelfstandig",
-                            DateFrom = new DateOnly(2017, 12, 7),
-                            DateTill = new DateOnly(2023, 2, 8),
+                            DateFrom = "12-2021",
+                            DateTill = "02-2023",
                             Description = "",
                             Function = "Webdevelopment",
                             TalentId = 8,
@@ -1150,8 +1219,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 10,
                             Company = "OCI",
-                            DateFrom = new DateOnly(2017, 9, 22),
-                            DateTill = new DateOnly(2021, 11, 23),
+                            DateFrom = "09-2021",
+                            DateTill = "11-2021",
                             Description = "",
                             Function = "Controlroom Operator/Projectleider",
                             TalentId = 8,
@@ -1161,8 +1230,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 11,
                             Company = "Sabic",
-                            DateFrom = new DateOnly(2001, 8, 14),
-                            DateTill = new DateOnly(2018, 8, 15),
+                            DateFrom = "08-2001",
+                            DateTill = "08-2018",
                             Description = "",
                             Function = "Controlroom Operator/Projectleider",
                             TalentId = 8,
@@ -1172,8 +1241,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 12,
                             Company = "BEE-Ideas",
-                            DateFrom = new DateOnly(2016, 1, 9),
-                            DateTill = new DateOnly(2024, 1, 1),
+                            DateFrom = "01-2020",
+                            DateTill = "Heden",
                             Description = "Als Product Owner ben ik verantwoordelijk om de lijm te zijn tussen de cliënt en het dev team. Het duidelijk in kaart brengen wat het team aan kan qua skills en workload (vooral hier belangrijk omdat de ervaring van teamleden uiteenlopen van medior IT-er tot iemand die net zijn eerste regel code heeft geschreven) en wat de verwachtingen/wensen van de cliënt zijn staan hier in centraal. Daarbij ben ik ook degene die de planning maakt en er voor zorgt dat iedereen weet wat de verwachtingen zijn. Dat houd soms dus ook in om onrealistische wensen aan te kaarten bij de cliënt.",
                             Function = "Front end developer",
                             TalentId = 9,
@@ -1183,8 +1252,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 13,
                             Company = "EduCom",
-                            DateFrom = new DateOnly(2015, 4, 25),
-                            DateTill = new DateOnly(2018, 12, 13),
+                            DateFrom = "04-2018",
+                            DateTill = "12-2018",
                             Description = "Het zijn van Scrum Master betekend dat ik het aanspreekpunt ben van het hele team en zorg dat iedereen zijn werk kan doen en ook met de juiste oplossingen kom wanneer we kuilen in de weg tegenkomen. Van coaching van teamleden tot het escaleren van issues naar hogerop mochten we er zelf niet uitkomen.",
                             Function = "Traineeship",
                             TalentId = 9,
@@ -1194,8 +1263,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 14,
                             Company = "VGI",
-                            DateFrom = new DateOnly(2014, 7, 2),
-                            DateTill = new DateOnly(2016, 9, 3),
+                            DateFrom = "07-2016",
+                            DateTill = "09-2016",
                             Description = "Als sessiemuzikant ben ik kundig om in verschillende genres nieuw materiaal te componeren dan wel arrangementen op bestaande\r\nmuziek uit te denken en te perfectioneren. Als producer ben ik verantwoordelijkheid voor een opnamesessie. Tot de minimale taken\r\nvan het indelen van de opnametijd in de studio en het nemen van eindbeslissingen. Als Sound Engineer nam ik alle techische aspecten ook op zoals het mix- en masterwerk, plaatsen van apparatuur etc.",
                             Function = "CAD Operator",
                             TalentId = 9,
@@ -1205,8 +1274,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 15,
                             Company = "Stichting de Gemeenschap",
-                            DateFrom = new DateOnly(2013, 3, 11),
-                            DateTill = new DateOnly(2015, 8, 7),
+                            DateFrom = "03-2014",
+                            DateTill = "08-2015",
                             Description = "In deze rol ben ik verantwoordelijk geweest om alle klantvragen in kaart te brengen en mensen te helpen bij hun vraag. Ook het\r\nmeedenken voor oplossingen van mensen met een betalingsachterstand hoorde hier bij.",
                             Function = "Anaylist",
                             TalentId = 9,
@@ -1216,8 +1285,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 16,
                             Company = "GPPS",
-                            DateFrom = new DateOnly(2018, 8, 6),
-                            DateTill = new DateOnly(2024, 1, 1),
+                            DateFrom = "08-2023",
+                            DateTill = "Heden",
                             Description = "Binnen het project ben ik zowel developer als scrum master binnenhet team. Als developer ben ik voornamelijk betrokken bij het stukfrontend. Hierin werk ik met HTML, CSS, TS (JS) binnen het Angularframework.",
                             Function = "Frontend developer",
                             TalentId = 10,
@@ -1227,8 +1296,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 17,
                             Company = "BEE-Ideas",
-                            DateFrom = new DateOnly(2018, 1, 17),
-                            DateTill = new DateOnly(2023, 6, 18),
+                            DateFrom = "01-2023",
+                            DateTill = "06-2023",
                             Description = "Binnen The Challenge Zone ben ik begonnen als stagiair developer. Inmijn tijd daar heb ik een goed contact opgebouwd met de managerMarc Huntjens en heb ik mij ook bewezen om twee projecten teoverzien als project manager. Deze werden gehanteerd met de scrummethode. Een van deze projecten was een webshop voor eenfi etswinkel. Het andere project was een datahygiëne project insamenwerking met 4 bouw gerelateerde bedrijven en Open University Maastricht.",
                             Function = "Frontend developer",
                             TalentId = 10,
@@ -1238,8 +1307,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 18,
                             Company = "Applicatieontwikkelaar",
-                            DateFrom = new DateOnly(2017, 10, 28),
-                            DateTill = new DateOnly(2022, 5, 29),
+                            DateFrom = "10-2021",
+                            DateTill = "05-2022",
                             Description = "",
                             Function = "The Challenge Zone",
                             TalentId = 10,
@@ -1249,8 +1318,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 19,
                             Company = "BEE-Ideas",
-                            DateFrom = new DateOnly(2018, 3, 13),
-                            DateTill = new DateOnly(2024, 1, 1),
+                            DateFrom = "03-2023",
+                            DateTill = "Heden",
                             Description = "Developer in Srum-Team",
                             Function = "Fullstack developer",
                             TalentId = 11,
@@ -1260,8 +1329,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 20,
                             Company = "Track Software",
-                            DateFrom = new DateOnly(2010, 11, 19),
-                            DateTill = new DateOnly(2022, 1, 20),
+                            DateFrom = "11-2010",
+                            DateTill = "1-2022",
                             Description = "Analyseren, Ontwerpen, Ontwikkelen, Testen, Documenteren, Plannen.",
                             Function = "Fullstack developer",
                             TalentId = 11,
@@ -1271,8 +1340,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 21,
                             Company = "Technosoft",
-                            DateFrom = new DateOnly(2005, 1, 4),
-                            DateTill = new DateOnly(2010, 10, 5),
+                            DateFrom = "1-2005",
+                            DateTill = "10-2010",
                             Description = "",
                             Function = "Fullstack developer",
                             TalentId = 11,
@@ -1282,8 +1351,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 22,
                             Company = "Philadelphia zorg",
-                            DateFrom = new DateOnly(2003, 10, 23),
-                            DateTill = new DateOnly(2004, 12, 24),
+                            DateFrom = "10-2003",
+                            DateTill = "12-2004",
                             Description = "",
                             Function = "Software developer",
                             TalentId = 11,
@@ -1293,8 +1362,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 23,
                             Company = "BEE-Ideas",
-                            DateFrom = new DateOnly(2018, 3, 2),
-                            DateTill = new DateOnly(2024, 1, 1),
+                            DateFrom = "03-2023",
+                            DateTill = "Heden",
                             Description = "Werken in een Scrum team aan een project voor AZL.",
                             Function = "Fullstack Developer",
                             TalentId = 12,
@@ -1304,8 +1373,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 24,
                             Company = "JSR IT",
-                            DateFrom = new DateOnly(2017, 2, 15),
-                            DateTill = new DateOnly(2022, 10, 16),
+                            DateFrom = "2-2020",
+                            DateTill = "10-2022",
                             Description = "Ontwikkelen van PHP web applicaties - Maken en optimaliseren van SQL queries - Linux systeembeheer - Beheren van VM's via VMware vCenter en het maken van backups hiervan.",
                             Function = "IT Medewerker",
                             TalentId = 12,
@@ -1315,8 +1384,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 25,
                             Company = "Flowid",
-                            DateFrom = new DateOnly(2010, 9, 30),
-                            DateTill = new DateOnly(2011, 1, 31),
+                            DateFrom = "09-2010",
+                            DateTill = "01-2011",
                             Description = "Stage",
                             Function = "Stagiair",
                             TalentId = 12,
@@ -1326,8 +1395,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 26,
                             Company = "BEE-Ideas Organisation",
-                            DateFrom = new DateOnly(2018, 7, 13),
-                            DateTill = new DateOnly(2024, 1, 1),
+                            DateFrom = "13/7/2023",
+                            DateTill = "Heden",
                             Description = "Als software engineer voor Bee Portal, richt ik me op het bouwen en onderhouden van de achterliggende systemen en API's. Ik werk nauw samen met een multidisciplinair team van ontwikkelaars om een vloeiende integratie tussen de frontend en backend te waarborgen. Mijn taken omvatten systeemintegratie, gegevensbeheer en het ondersteunen van de realisatie van Bee Portal's visie als een centrale informatiehub voor kandidaten, medewerkers en begeleiders. Dit is fulltime en remote.",
                             Function = "Software Engineer",
                             TalentId = 13,
@@ -1337,8 +1406,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 27,
                             Company = "Zelfstandig",
-                            DateFrom = new DateOnly(2017, 3, 12),
-                            DateTill = new DateOnly(2023, 7, 13),
+                            DateFrom = "12/3/2020",
+                            DateTill = "12/7/2023",
                             Description = "Eigen projecten uitvoeren om zo ervaring op te doen als software engineer. Deze projecten waren bijvoorbeeld een microcontroller\r\nprogrammeren zodat deze een sensor kan a􀀁ezen en via internet data op kon vragen en daarna deze data ook via websocket en http\r\nrequests beschikbaar worden gemaakt om op te vragen via een programma dat draait op een server. Dit programma slaat dit op in een database waarna deze data bekeken kan worden via een gemaakte website. Nog een project was een C++ programma om automatisch een nieuw C++ project te kunnen starten, dit hield in de  juiste folder structuur te maken en de juiste benodigde start bestanden te maken. Een derde project was Covid data van het RIVM ophalen, deze importeren in een database elke dag en deze lokaal te laten benaderen via een website. Hierdoor was te zien wat de situatie was in mijn eigen dorp en de trend.",
                             Function = "Software Engineer",
                             TalentId = 13,
@@ -1348,8 +1417,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 28,
                             Company = "Kuehne+Nagel",
-                            DateFrom = new DateOnly(2010, 7, 5),
-                            DateTill = new DateOnly(2010, 8, 28),
+                            DateFrom = "5/7/2010",
+                            DateTill = "27/8/2010",
                             Description = "",
                             Function = "Administratief Medewerker",
                             TalentId = 13,
@@ -1359,8 +1428,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 29,
                             Company = "Bee Ideas",
-                            DateFrom = new DateOnly(2018, 3, 1),
-                            DateTill = new DateOnly(2023, 9, 30),
+                            DateFrom = "1/3/2023",
+                            DateTill = "30/9/2023",
                             Description = "Tijdens een leer-werk traject wordt er projectmatig gewerkt aan eenportal. Ik heb gedurende een half jaar de rol van Scrum Master op megenomen. Tevens heb ik me hierbij steeds meer verdiept in defacetten van Scrum Master. Ik heb mijn PSM1 certifi caat gehaald enben momenteel bezig om het PSM2 certificaat te halen.",
                             Function = "Scrum Master",
                             TalentId = 14,
@@ -1370,8 +1439,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 30,
                             Company = "Ida Gerhardt Academie",
-                            DateFrom = new DateOnly(2017, 5, 1),
-                            DateTill = new DateOnly(2022, 11, 30),
+                            DateFrom = "1-5-2022",
+                            DateTill = "30/11/2022",
                             Description = "Docent wiskunde onderbouw Havo / VWO",
                             Function = "Docent Wiskunde",
                             TalentId = 14,
@@ -1381,8 +1450,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 31,
                             Company = "Holland House",
-                            DateFrom = new DateOnly(2013, 5, 1),
-                            DateTill = new DateOnly(2022, 3, 31),
+                            DateFrom = "1-5-2013",
+                            DateTill = "31-3-2022",
                             Description = "Analist, developer, Software Tester, Support engineer",
                             Function = "Senior Software Engineer",
                             TalentId = 14,
@@ -1392,8 +1461,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 32,
                             Company = "Raayland College",
-                            DateFrom = new DateOnly(2012, 8, 1),
-                            DateTill = new DateOnly(2013, 4, 30),
+                            DateFrom = "1-8-2012",
+                            DateTill = "30-4-2013",
                             Description = "Doceren wiskunde VMBO / HAVO / VWO klas 1, 2 en 3",
                             Function = "Docent Wiskunde",
                             TalentId = 14,
@@ -1403,8 +1472,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 33,
                             Company = "Udens College",
-                            DateFrom = new DateOnly(2010, 8, 1),
-                            DateTill = new DateOnly(2012, 7, 31),
+                            DateFrom = "1-8-2010",
+                            DateTill = "31-7-2012",
                             Description = "",
                             Function = "Docent Wiskunde",
                             TalentId = 14,
@@ -1414,8 +1483,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 34,
                             Company = "Rodenborch College",
-                            DateFrom = new DateOnly(2009, 1, 26),
-                            DateTill = new DateOnly(2010, 7, 31),
+                            DateFrom = "26-1-2009",
+                            DateTill = "31-7-2010",
                             Description = "",
                             Function = "Docent Wiskunde",
                             TalentId = 14,
@@ -1425,8 +1494,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 35,
                             Company = "Mapscape",
-                            DateFrom = new DateOnly(2007, 10, 1),
-                            DateTill = new DateOnly(2009, 1, 27),
+                            DateFrom = "1-12-2007",
+                            DateTill = "25-01-2009",
                             Description = "",
                             Function = "Technical Writer",
                             TalentId = 14,
@@ -1436,8 +1505,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 36,
                             Company = "Planon",
-                            DateFrom = new DateOnly(2003, 6, 1),
-                            DateTill = new DateOnly(2007, 11, 30),
+                            DateFrom = "1-6-2003",
+                            DateTill = "30-11-2007",
                             Description = "",
                             Function = "ICT Consultant",
                             TalentId = 14,
@@ -1447,8 +1516,8 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 37,
                             Company = "Computron",
-                            DateFrom = new DateOnly(2001, 1, 16),
-                            DateTill = new DateOnly(2003, 5, 31),
+                            DateFrom = "16-1-2001",
+                            DateTill = "31-5-2003",
                             Description = "",
                             Function = "Senior Software Engineer",
                             TalentId = 14,
@@ -1458,30 +1527,13 @@ namespace TalentDataAccess.Migrations
                         {
                             Id = 38,
                             Company = "PTS Software",
-                            DateFrom = new DateOnly(1998, 5, 1),
-                            DateTill = new DateOnly(2001, 1, 17),
+                            DateFrom = "1-5-1998",
+                            DateTill = "15-1-2001",
                             Description = "",
                             Function = "Senior Software Engineer",
                             TalentId = 14,
                             Tasks = new List<string>()
                         });
-                });
-
-            modelBuilder.Entity("TalentDataAccess.DataAccess.DataAccessObjects.SkillType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SkillType", "TalentenPortaal");
                 });
 
             modelBuilder.Entity("TalentDataAccess.DataAccess.DataAccessObjects.Talent", b =>
@@ -1507,8 +1559,8 @@ namespace TalentDataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateOnly>("DateOfBirth")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -1620,7 +1672,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1955, 1, 6),
+                            DateOfBirth = new DateTime(1955, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Maakt mensen graag aan het lachen.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -1653,7 +1705,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1974, 1, 30),
+                            DateOfBirth = new DateTime(1974, 1, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Debiteuren en crediteuren is echt zijn ding.",
                             DesiredWorkLocation = "Thuis/Kantoor",
                             Education = "HBO",
@@ -1686,7 +1738,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1989, 5, 29),
+                            DateOfBirth = new DateTime(1989, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Een echte kei in Desktop Publishing.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1719,7 +1771,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1988, 3, 21),
+                            DateOfBirth = new DateTime(1988, 3, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Verkoopt graag in een winkel.",
                             DesiredWorkLocation = "Remote/Kantoor",
                             Education = "MBO",
@@ -1752,7 +1804,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1987, 9, 30),
+                            DateOfBirth = new DateTime(1987, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Brengt graag mensen naar een bestemming.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1785,7 +1837,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1990, 8, 31),
+                            DateOfBirth = new DateTime(1990, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administratie is haar lust en haar leven.",
                             DesiredWorkLocation = "Remote/Kantoor",
                             Education = "MBO",
@@ -1818,7 +1870,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1991, 7, 30),
+                            DateOfBirth = new DateTime(1991, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Maakt ook graag een praatje met de mensen.",
                             DesiredWorkLocation = "Remote",
                             Education = "MBO",
@@ -1851,7 +1903,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1972, 6, 12),
+                            DateOfBirth = new DateTime(1972, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Mijn passie is om mensen behulpzaam te zijn door producten te maken die mensen helpen in hun dagelijkse werkzaamheden. Als Product Owner/ (Scrum Master/Projectleider) ben ik de bruggenbouwer die hier dagelijks voor zorgt en hier haal ik elke dag veel voldoening uit. In de toekomst wil ik meer complexere vraagstukken vanuit de business kunnen vertalen naar goede software matige oplossingen. Bij BEE-Ideas heb ik beide aspecten van het SCRUM proces leren kennen doordat ik zowel de rol van Product Owner als de rol van Scrum Master heb bekleed.",
                             DesiredWorkLocation = "Hybride - Thuis/Kantoor",
                             Education = "HBO",
@@ -1884,7 +1936,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1994, 5, 2),
+                            DateOfBirth = new DateTime(1994, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Websites maken, gamen, het web afstruinen, computers bouwen - van kinds af aan fascineerde de IT mij al.  Tijdens mijn carriere in de ruimtelijke ordening heb ik veel vaardigheid ontwikkeld in projectmatig werken - zowel zelfstandig als in teamverband. Ik kreeg echter te weinig uitdaging en mijn interesse in het vak ebde weg .  Nadat ik in 2017 door een operatie van epilepsie ben genezen, heb ik besloten om van mijn liefde voor de IT - en met name front-end development - mijn beroep te gaan maken. Met cursussen, een IT-traineeship en zelfstandige projecten heb ik een professioneel niveau bereikt.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -1917,7 +1969,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1992, 12, 1),
+                            DateOfBirth = new DateTime(1992, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik omschrijf mijzelf als een positief persoon die altijd direct op zoek gaat naar de juiste oplossing voor een probleem. Over de jaren ben ik erg gegroeid in het herkennen van mijn goede kwaliteiten maar zo ook mijn valkuilen. Communicatie vind ik zeer belangrijk.  Op een technisch niveau heb ik interesse in front-end development en wil mij daar ook graag verder in ontwikkelen. Tijdens mijn opleiding heb ik grotendeels met PHP gewerkt met de OOP methode. SQL kwam ook te pas. In mijn zelfstudie heb ik mij verdiept in React.js.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "MBO",
@@ -1950,7 +2002,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1960, 4, 12),
+                            DateOfBirth = new DateTime(1960, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Als werknemer wens ik als loyale teamplayer intellectueel uitgedaagd te worden. Het geeft mij voldoening tegenslagen te overwinnen en samen fantastische prestaties te behalen. Ik vind het heerlijk om gezamenlijk (maar soms ook zelfstandig) een zowel technisch als functioneel kwalitatief hoogstaand product op te leveren.",
                             DesiredWorkLocation = "Remote",
                             Education = "WO",
@@ -1983,7 +2035,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1986, 11, 22),
+                            DateOfBirth = new DateTime(1986, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik vind het leuk om te programmeren, ben  hier ook in mijn vrije tijd veel mee bezig. Zo heb ik bijvoorbeeld een berechtingssyteem gemaakt voor gewichthefwedstrijden op basis van een arduino. Ik kan goed zelfstandig werken. Ook doe ik mijn werk secuur en met veel aandacht voor details.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "HBO",
@@ -2016,7 +2068,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1988, 4, 27),
+                            DateOfBirth = new DateTime(1988, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ik ben een gedreven software-ontwikkelaar met een sterke technische achtergrond en een passie voor innovatie. Mijn\r\nvoortdurende zoektocht naar uitdagingen stelt me in staat om op de hoogte te blijven van de nieuwste technologische trends en\r\ndeze toe te passen om bestaande projecten te versterken en nieuwe te initiëren. Mijn ambitie is om samen met getalenteerde\r\nteams hoogwaardige producten te creëren waar we allemaal trots op zijn. Mijn focus ligt op het leveren van kwaliteit en het\r\nontwikkelen van innovatieve, probleemoplossende oplossingen.",
                             DesiredWorkLocation = "Remote",
                             Education = "HBO",
@@ -2049,7 +2101,7 @@ namespace TalentDataAccess.Migrations
                             ContactOptions = "email, telefonisch, LinkedIn",
                             CountryCode = "",
                             CvUrl = "",
-                            DateOfBirth = new DateOnly(1960, 3, 17),
+                            DateOfBirth = new DateTime(1960, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Technisch onderlegde en didactisch vaardige scrum master.Door diverse functies in software engineering ben ik technischonderlegd in allerlei takken van software ontwikkeling. Tevensheb ik jarenlang als docent wiskunde voor de klas gestaanwaarbij diverse sturende en motiverende vaardigheden belangrijkzijn. Tot mijn verrassing komen vele onderdelen uit deze functiesheel mooi samen in de rol van een scrum master. Ik wil nu graagalles combineren en inzetten om tot een mooi mogelijk resultaatte komen met een scrum team.",
                             DesiredWorkLocation = "Hybride - Remote/Kantoor",
                             Education = "HBO",
@@ -3522,9 +3574,6 @@ namespace TalentDataAccess.Migrations
                     b.Property<int>("SkillLevel")
                         .HasColumnType("integer");
 
-                    b.Property<int>("SkillTypeId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("TalentPropertyLabelId")
                         .HasColumnType("integer");
 
@@ -3532,8 +3581,6 @@ namespace TalentDataAccess.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SkillTypeId");
 
                     b.HasIndex("TalentPropertyMainCategoryLinkId");
 
@@ -3881,19 +3928,11 @@ namespace TalentDataAccess.Migrations
 
             modelBuilder.Entity("TalentDataAccess.DataAccess.DataAccessObjects.TalentPropertySubCategoryLink", b =>
                 {
-                    b.HasOne("TalentDataAccess.DataAccess.DataAccessObjects.SkillType", "SkillType")
-                        .WithMany("TalentPropertySubCategoryLinks")
-                        .HasForeignKey("SkillTypeId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("TalentDataAccess.DataAccess.DataAccessObjects.TalentPropertyMainCategoryLink", "TalentPropertyMainCategoryLink")
                         .WithMany("TalentPropertySubCategoryLinks")
                         .HasForeignKey("TalentPropertyMainCategoryLinkId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("SkillType");
 
                     b.Navigation("TalentPropertyMainCategoryLink");
                 });
@@ -3929,11 +3968,6 @@ namespace TalentDataAccess.Migrations
                     b.Navigation("VacancyOffer");
 
                     b.Navigation("VacancyText");
-                });
-
-            modelBuilder.Entity("TalentDataAccess.DataAccess.DataAccessObjects.SkillType", b =>
-                {
-                    b.Navigation("TalentPropertySubCategoryLinks");
                 });
 
             modelBuilder.Entity("TalentDataAccess.DataAccess.DataAccessObjects.Talent", b =>

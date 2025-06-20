@@ -42,7 +42,12 @@ var connection = builder.Configuration.GetConnectionString("TalentPortal-Localdb
 var connection = builder.Configuration.GetConnectionString("TalentPortal");
 #endif
 
-builder.Services.AddDbContext<TalentDbContext>(options => options.UseNpgsql(connection));
+//builder.Services.AddDbContext<TalentDbContext>(options => options.UseNpgsql(connection));
+builder.Services.AddDbContext<TalentDbContext>(options =>
+    options.UseNpgsql(connection, npgsqlOptions =>
+        npgsqlOptions.MigrationsAssembly("TalentDataAccess")
+    )
+);
 
 builder.Services
     .AddGraphQLServer()

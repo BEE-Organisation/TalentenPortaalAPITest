@@ -20,9 +20,12 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         public int SkillLevel { get; set; }
         public int Order { get; set; }
 
-        //[ForeignKey("TalentPropertyMainCategoryLink")]
-        //public int TalentPropertyMainCategoryLinkId { get; set; }
-        
+        [ForeignKey("TalentPropertyMainCategoryLink")]
+        public int TalentPropertyMainCategoryLinkId { get; set; }
+
+        public int SkillTypeId { get; set; } 
+        public SkillType SkillType { get; set; } = null!; 
+
         public TalentPropertyMainCategoryLink TalentPropertyMainCategoryLink { get; set; }
 
     }
