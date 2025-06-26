@@ -24,6 +24,8 @@ namespace TalentDataAccess.DataAccess.Repositories
 
         Task<List<string>> GetDistinctCompanies();
 
+        Task<List<string>> GetDistinctLaborMarketRegion();
+
     }
 
     public class SearchFilterRepository : ISearchFilterRepository
@@ -192,6 +194,17 @@ namespace TalentDataAccess.DataAccess.Repositories
 
             return ids;
         }
-    }
 
+        public async Task<List<string>> GetDistinctLaborMarketRegion()
+        {
+            return await _dbContext.Talents
+                .Include(x => x.LaborMarketRegion)
+                .Where(x => x.IsProfileVisible && x.LaborMarketRegion != null)   
+                .OrderBy(x => x.LaborMarketRegion!.Name) 
+                .Select(x => x.LaborMarketRegion!.Name)  
+                .Distinct()
+                .ToListAsync()
+                .ConfigureAwait(false);
+        }
+    }
 }

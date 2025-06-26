@@ -12,9 +12,8 @@ namespace TalentLogic.Logic.BusinessObjects
 
         #region Personal Information
 
-        public string Name { get; set; } = string.Empty; // TODO: to be removed
-        public string Initials { get; set; } = string.Empty; // TODO: use when field is created
-        public string GivenName { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty; 
+        public string Initials { get; set; } = string.Empty; 
         public string Surname { get; set; } = string.Empty;
         public string NamePrefix { get; set; } = string.Empty;
         public string DateOfBirth { get; set; }

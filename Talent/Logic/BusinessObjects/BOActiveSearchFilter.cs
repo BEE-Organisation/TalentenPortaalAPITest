@@ -15,6 +15,8 @@ namespace TalentDataAccess.DataAccess.Repositories
 
         public List<string> Companies { get; set; } = new List<string>();
 
+        public List<string> LaborMarketRegions { get; set; } = new List<string>();
+
         public int AvailableHoursMin { get; set; } = 8;
 
         public int AvailableHoursMax { get; set; } = 40;

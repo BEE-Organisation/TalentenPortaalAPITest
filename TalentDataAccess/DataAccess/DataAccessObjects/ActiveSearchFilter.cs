@@ -16,6 +16,8 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
 
         public List<string> Companies { get; set; } = new List<string>();
 
+        public List<string> LaborMarketRegions { get; set; } = new List<string>();
+
         public List<int> FilterProperties { get; set; } = new List<int>();
 
         public int AvailableHoursMin { get; set; } = 8;

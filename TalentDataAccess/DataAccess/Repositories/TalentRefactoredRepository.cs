@@ -51,6 +51,7 @@ namespace TalentDataAccess.DataAccess.Repositories
         {
             return await _dbContext.Talents
                 .AsNoTracking()
+                .Include(x => x.LaborMarketRegion)
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
                     .ThenInclude(x => x.SkillType)
@@ -63,6 +64,7 @@ namespace TalentDataAccess.DataAccess.Repositories
         {
             return await _dbContext.Talents
                 .AsNoTracking()
+                .Include(x => x.LaborMarketRegion)
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
                     .ThenInclude(x => x.SkillType)
@@ -76,6 +78,7 @@ namespace TalentDataAccess.DataAccess.Repositories
 
             IQueryable <Talent> query = _dbContext.Talents
                 .AsNoTracking()
+                .Include(x => x.LaborMarketRegion)
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
                     .ThenInclude(x => x.SkillType)
@@ -141,6 +144,7 @@ namespace TalentDataAccess.DataAccess.Repositories
 
             return await _dbContext.Talents
                 .AsNoTracking()
+                .Include(x => x.LaborMarketRegion)
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
                     .ThenInclude(x => x.SkillType)
@@ -173,6 +177,7 @@ namespace TalentDataAccess.DataAccess.Repositories
             }
 
             IQueryable<Talent> query = _dbContext.Talents
+                .Include(x => x.LaborMarketRegion)
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
                     .ThenInclude(x => x.SkillType);
@@ -182,6 +187,11 @@ namespace TalentDataAccess.DataAccess.Repositories
                 query = query.Where(x => filters.Provinces.Contains(x.Province));
             }
 
+            if (filters.LaborMarketRegions.Count() > 0)
+            {
+                query = query.Where(x => x.LaborMarketRegion != null && filters.LaborMarketRegions.Contains(x.LaborMarketRegion.Name));
+            }
+
             if (filters.EducationLevels.Count() > 0)
             {
                 query = query.Where(x => filters.EducationLevels.Contains(x.Education));
@@ -189,13 +199,11 @@ namespace TalentDataAccess.DataAccess.Repositories
 
             if (filters.AvailableHoursMin != 8)
             {
-                //query = query.Where(x = x > filters.AvailableHoursMin >= (decimal) filters.AvailableHoursMin);
                 query = query.Where(x => x.AvailableHours >= filters.AvailableHoursMin);
             }
 
             if (filters.AvailableHoursMax != 40)
             {
-                //query = query.Where(x => filters.AvailableHoursMin <= (decimal) filters.AvailableHoursMax);
                 query = query.Where(x => x.AvailableHours <= filters.AvailableHoursMax);
             }
 
@@ -206,11 +214,10 @@ namespace TalentDataAccess.DataAccess.Repositories
 
             if (filters.TravelDistance > 0)
             {
-                //query = query.Where(x => filters.TravelDistance > filters.TravelDistance);
                 query = query.Where(x => x.TravelDistance <= filters.TravelDistance);
             }
 
-            if(activeProfiles.Count() > 0 && filterCategoriesByTalentId.Count() > 0)
+            if (activeProfiles.Count() > 0 && filterCategoriesByTalentId.Count() > 0)
             {
                 query = query.Where(x => activeProfiles.Contains(x.Id) && filterCategoriesByTalentId.Contains(x.Id));
             }
@@ -231,6 +238,7 @@ namespace TalentDataAccess.DataAccess.Repositories
 
             return await _dbContext.Talents
                 .AsNoTracking()
+                .Include(x => x.LaborMarketRegion)
                 .Include(x => x.TalentPropertyMainCategoryLinks)
                 .ThenInclude(x => x.TalentPropertySubCategoryLinks.OrderBy(x => x.Order))
                     .ThenInclude(x => x.SkillType)

@@ -25,6 +25,7 @@ namespace TalentLogic.Logic.ObjectMappers
             model.TravelDistance = (bo.TravelDistance < 0) ? 0 : bo.TravelDistance;
             model.SkillLevels = RemoveHTML(bo.SkillLevels);
             model.Companies = RemoveHTML(bo.Companies);
+            model.LaborMarketRegions = RemoveHTML(bo.LaborMarketRegions);
 
             return model;
         }
