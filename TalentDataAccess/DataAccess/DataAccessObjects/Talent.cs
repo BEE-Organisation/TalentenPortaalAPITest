@@ -52,6 +52,9 @@ namespace TalentDataAccess.DataAccess.DataAccessObjects
         [ForeignKey("Organization")]
         public int? OrganisationId { get; set; }
         public Organization? Organization { get; set; }
+        [ForeignKey("LaborMarketRegion")]
+        public int? LaborMarketRegionId { get; set; }
+        public LaborMarketRegion? LaborMarketRegion { get; set; }
 
         [Required]
         public string JobTitle { get; set; } = string.Empty;

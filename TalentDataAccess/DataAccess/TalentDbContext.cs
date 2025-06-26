@@ -15,6 +15,7 @@ namespace TalentDataAccess.DataAccess
         public DbSet<TalentPropertySubCategoryLink> TalentPropertySubCategoryLinks { get; set; }
         public DbSet<SkillType> SkillTypes { get; set; }
         public DbSet<Organization> Organizations { get; set; }
+        public DbSet<LaborMarketRegion> LaborMarketRegions { get; set; }
 
         public DbSet<Company> Companies { get; set; }
         public DbSet<VacancyComplete> Vacancies { get; set; }
@@ -81,6 +82,10 @@ namespace TalentDataAccess.DataAccess
 
             modelBuilder.Entity<Company>().HasData(
                 CreateCompanies.Create()
+            );
+
+            modelBuilder.Entity<LaborMarketRegion>().HasData(
+                CreateLaborMarketRegions.Create()
             );
 
             modelBuilder.Entity<VacancyOffer>().HasData(

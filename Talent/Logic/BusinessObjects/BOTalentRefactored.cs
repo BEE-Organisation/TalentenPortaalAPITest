@@ -53,6 +53,8 @@ namespace TalentLogic.Logic.BusinessObjects
 
         public int? OrganisationId { get; set; }
         public BOOrganization? Organization { get; set; }
+        public int? LaborMarketRegionId { get; set; }
+        public BOLaborMarketRegion? LaborMarketRegion { get; set; }
 
         public string JobTitle { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;

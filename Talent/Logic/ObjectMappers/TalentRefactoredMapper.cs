@@ -72,6 +72,14 @@ namespace TalentLogic.Logic.ObjectMappers
             {
                 bo.Organization = OrganizationMapper.Map(model.Organization);
             }
+            if (model.LaborMarketRegionId != null)
+            {
+                bo.LaborMarketRegionId = model.LaborMarketRegionId;
+            }
+            if (model.LaborMarketRegion != null)
+            {
+                bo.LaborMarketRegion = LaborMarketRegionMapper.Map(model.LaborMarketRegion);
+            }
 
             bo.JobTitle = model.JobTitle;
             bo.Description  = model.Description;
@@ -153,6 +161,20 @@ namespace TalentLogic.Logic.ObjectMappers
             if (bo.Organization != null)
             {                
                 model.Organization = OrganizationMapper.Map(bo.Organization);
+            }
+
+            if (bo.LaborMarketRegionId != null)
+            {
+                model.LaborMarketRegionId = (bo.LaborMarketRegionId > 0) ? bo.LaborMarketRegionId : null;
+            }
+            else
+            {
+                model.LaborMarketRegionId = null;
+            }
+
+            if (bo.LaborMarketRegion != null)
+            {
+                model.LaborMarketRegion = LaborMarketRegionMapper.Map(bo.LaborMarketRegion);
             }
 
             model.JobTitle = bo.JobTitle;
